@@ -6,21 +6,23 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // setup basic middleware
+  // request parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
   // static file serving
 app.use(express.static(path.resolve(__dirname, '../client/dist')))
-  // request parsing
-app.use(express.urlencoded()) // do we need both of these parsers?
-app.use(express.json())
+
+
 
 // setup simple server test routes
 app.get('/test', (req, res)=>{
   console.log("GET recieved")
-  res.write(200).send("You did a GET to the /test endpoint! Look at you go!")
+  res.set(200).send("You did a GET to the /test endpoint! Look at you go!")
 })
 
 app.post('/test', (req, res)=>{
   console.log("POST recieved")
-  res.write(200).send("POST to endpoint /test! Aren't you just the POSTer child of excellence?!")
+  res.set(200).send("POST to endpoint /test! Aren't you just the POSTer child of excellence?!")
 })
 
 app.listen(PORT, (err)=>{
