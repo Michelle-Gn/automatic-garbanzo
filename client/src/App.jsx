@@ -1,12 +1,11 @@
 import React from 'react';
 
-import ProductOverview from './components/ProductOverview/ProductOverview.jsx';
+import QuestionsList from './components/QuestionAnswer/QuestionsList.jsx';
 
 var App = () => {
   return (
     <div>
-     <ProductOverview />
-     {/* Additional Top Level Components */}
+     <QuestionsList />
     </div>
   )
 }
