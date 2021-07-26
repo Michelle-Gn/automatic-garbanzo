@@ -57,7 +57,7 @@ export const productsGet = [
   }
 ]
 // GET products/16058
-export  const productsID = {
+export  const productId = {
   "id": 16058,
   "campus": "hr-lax",
   "name": "Morning Joggers",
