@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ReviewList from '../ReviewsRatings/Reviews/ReviewList.jsx';
-// import review list actions
+import reviewListActions from '../../actions/R&R/reviewListActions.js';
 
 const mapStateToProps = state => ({
   // current product
@@ -11,6 +11,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   // handle clicks to see more reviews
   // add more reviews to list
+  addReviews: reviews => {
+    dispatch(reviewListActions.changeReviewList(reviews));
+  }
 });
 
 const ReviewListContainer = connect(mapStateToProps, mapDispatchToProps)(ReviewList);
