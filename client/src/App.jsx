@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store';
 // Our Custom Modules
 import ProductOverview from './components/ProductOverview/ProductOverview.jsx';
-import RatingsReviews from './components/ReviewsRatings/reviewsRatingsContainer.js';
+// import RatingsReviews from './components/ReviewsRatings/reviewsRatingsContainer.js';
 
 
 var App = () => {
