@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 
 var ImageGallery = (props) => {
   const style = useSelector(state => state.updateStyleReducer.selectedStyle)
+
   const [selectedThumb, setThumb] = useState(style.photos[0].url)
 
   useEffect(() => { setThumb(style.photos[0].url) }, [style])
@@ -11,6 +12,7 @@ var ImageGallery = (props) => {
   const photos = style.photos;
   const thumbs = photos.map( photo =>
     <img
+      className="img-thumbnail"
       src={photo.thumbnail_url}
       name={photo.url}
       style={{height: '10vh'}}
