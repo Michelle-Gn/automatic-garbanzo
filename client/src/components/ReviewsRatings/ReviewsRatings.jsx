@@ -1,5 +1,6 @@
 import React from 'react';
-// import Review List contaner
+import Breakdown from './Breakdown/Breakdown.jsx';
+import ReviewListContainer from '../containers/R&R/reviewListContainer.js';
 // import helpers
 
 const ReviewsRatings = (props) => {
@@ -12,7 +13,7 @@ const ReviewsRatings = (props) => {
     <div>
       <h1>Ratings &amp; Reviews</h1>
       <Breakdown />
-      <ReviewList />
+      <ReviewListContainer />
     </div>
   )
 };
