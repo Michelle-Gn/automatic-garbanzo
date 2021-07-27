@@ -13,9 +13,8 @@ var StyleSelector = (props) => {
         name={style.style_id}
         src={thumb}
         alt="aThumb"
-        style={{height: '10vh'}}
+        style={{height: '5vh'}}
         onClick={(e) => {
-          // console.log(typeof e.target.name)
           dispatch(UpdateSelectedStyle(e.target.name))
         }}
         />

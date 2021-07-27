@@ -17,10 +17,11 @@ export const UpdateSelectedStyle = (selectedId) => {
   return {
     type: actionTypes.UPDATE_SELECTED_STYLE,
     payload: {
-      style_id: selectedId
+      style_id: Number(selectedId)
     }
   }
-}
+};
+
 
 // Ratings and Reviews Action Creators
 
