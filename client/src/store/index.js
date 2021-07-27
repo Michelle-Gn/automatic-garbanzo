@@ -6,6 +6,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 import rootReducer from '../components/reducers/';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+// Need to pass 'undefined' if we are not providing a preloaded state
+const store = createStore(rootReducer, undefined, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;
