@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import ReviewsRatings from '../../components/ReviewsRatings/ReviewsRatings.jsx'; // NOT IN THIS BRANCH
-import reviewsRatingsActions from '../actions/reviewsRatingsActions.js';
+import ReviewsRatings from '../ReviewsRatings/reviewsRatingsContainer'; // Path to component
+import { reviewsRatingsActions } from '../actions/actions';
 
 const mapStateToProps = state => ({
   // current product
