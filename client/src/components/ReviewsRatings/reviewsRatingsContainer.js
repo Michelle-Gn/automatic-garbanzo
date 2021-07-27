@@ -1,5 +1,5 @@
-import {connect} from 'react-redux';
-import ReviewsRatings from '../ReviewsRatings/reviewsRatingsContainer'; // Path to component
+import { connect } from 'react-redux';
+import ReviewsRatings from '../ReviewsRatings/reviewsRatingsContainer';
 import { reviewsRatingsActions } from '../actions/actions';
 
 const mapStateToProps = state => ({
