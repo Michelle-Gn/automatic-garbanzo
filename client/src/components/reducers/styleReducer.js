@@ -11,7 +11,7 @@ const updateStyleReducer = (state = initialState, action) => {
     case actionTypes.UPDATE_SELECTED_STYLE:
       return {
         ...state,
-        selectedStyle: state.styleList.results.filter(style => style['style_Id'] === action.payload.id)
+        selectedStyle: state.styleList.filter(style => style['style_Id'] === action.payload.style_id)
       };
     default:
       return state;
