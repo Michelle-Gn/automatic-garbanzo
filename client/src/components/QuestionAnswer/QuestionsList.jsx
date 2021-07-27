@@ -33,7 +33,7 @@ class QuestionsList extends React.Component {
         <div>
           <Questions/>
         <button className = "more-questions">
-          MORE ANSWERED QUESTIONSs
+          MORE ANSWERED QUESTIONS
         </button>
         <button className = "add-question">
          ADD A QUESTION +

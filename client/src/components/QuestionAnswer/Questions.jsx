@@ -8,6 +8,7 @@ class Questions extends React.Component {
     this.state = {
       product_id : 16056,
       allQuestions: [],
+      allAnswers: [],
       currentQuestions: []
     };
 
@@ -19,6 +20,18 @@ class Questions extends React.Component {
   }
 
   getQuestions() {
+    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/qa/questions?product_id=${this.state.product_id}`,
+    { headers: {'Authorization': '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'}})
+    .then((results) => {
+      this.setState ({
+        allQuestions: results.data.results
+      })})
+    .catch((error) => {
+      console.log(error)
+    });
+  }
+
+  getAnswer() {
     axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/qa/questions?product_id=${this.state.product_id}`,
     { headers: {'Authorization': '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'}})
     .then((results) => {
