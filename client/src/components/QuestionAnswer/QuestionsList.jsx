@@ -5,7 +5,6 @@ class QuestionsList extends React.Component {
   constructor () {
     super ();
     this.state = {
-    product: '',
     questions: [],
     answers: [],
     view: 'default'};
