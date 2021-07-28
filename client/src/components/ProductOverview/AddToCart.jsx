@@ -55,7 +55,7 @@ var AddToCart = (props) => {
           required>
         {qtysList.slice(0,15)}
       </select>
-      <button type="submit" className="btn-md">Add to Cart</button>
+      <button type="submit" className="">Add to Cart</button>
       </form>
     </section>
   )

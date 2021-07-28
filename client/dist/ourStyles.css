@@ -1,67 +1,30 @@
 html {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: honeydew;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.AppContainer {
-  margin: 0.25em;
+#AppContainer {
+  background: linear-gradient(351deg, #0df0b5, #b698ff);
+  background-size: 400% 400%;
+
+  -webkit-animation: bg-swirl 4s ease infinite;
+  -moz-animation: bg-swirl 4s ease infinite;
+  animation: bg-swirl 4s ease infinite;
 }
 
-.flex-row {
-  display: flex;
-  justify-content: center;
-}
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
+/* Animation Keyframes */
+@-webkit-keyframes bg-swirl {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-.flex-split {
-  justify-content: space-between;
+@-moz-keyframes bg-swirl {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-
-.flex-left {
-  align-items: flex-start;
+@keyframes bg-swirl {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-.flex-right {
-  align-items: flex-end;
-}
-.flex-center {
-  align-items:center;
-}
-
-#styleSelector {
-  justify-content: center;
-}
-.img-thumbnail {
-  margin: 0 5px 0 5px;
-  border-radius: 5px;
-}
-
-#imageGallery {
-  width: 100vw;
-  justify-content: center;
-}
-
-#galleryThumbs {
-  position: absolute;
-  background-color: honeydew;
-  padding:5px;
-  border-radius: 10px;
-}
-
-#galleryThumbs img {
-  padding: 5px;
-  border-radius: 10px;
-  width:auto;
-}
-
-#mainViewContainer {
-  text-align: center;
-}
-
-#mainViewContainer img{
-  height: 70vh;
-}
-
-/* Testing Zoom functionality with CSS */
