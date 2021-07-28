@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes'
+import * as actionTypes from '../actionTypes'
 import API_KEY from '../../../../config'
 import axios from 'axios'
 import { useDispatch} from 'react-redux'
@@ -68,28 +68,5 @@ export const addToCart = (SKU, QTY, SIZE) => {
       QTY: QTY,
       SIZE: SIZE
     }
-  }
-};
-
-// Ratings and Reviews Action Creators
-
-export const reviewsRatingsActions = {
-  getMetaData: meta => ({
-    type: actionTypes.GET_RATINGS,
-    ratingsMeta: meta
-  }),
-
-  setTotalRatings: meta => {
-    const totalRatings = Object.values(meta.ratings).reduce((sum, key) => sum + parseFloat(key));
-    const ratingSum = 0;
-    for (var rating in meta.ratings) {
-      const currentRating = meta.ratings[rating] * Number(rating);
-      ratingSum += currentRating;
-    }
-
-    return {
-      type: actionTypes.SET_TOTAL_RATINGS_AND_AVERAGE,
-      starAverage: ratingSum / totalRatings
-    };
   }
 };

@@ -9,27 +9,55 @@ html {
 
 .flex-row {
   display: flex;
+  justify-content: center;
 }
 
 .flex-col {
   display: flex;
   flex-direction: column;
 }
+.flex-split {
+  justify-content: space-between;
+}
+
+.flex-left {
+  align-items: flex-start;
+}
+.flex-right {
+  align-items: flex-end;
+}
+.flex-center {
+  align-items:center;
+}
+
+#styleSelector {
+  justify-content: center;
+}
+.img-thumbnail {
+  margin: 0 5px 0 5px;
+  border-radius: 5px;
+}
 
 #imageGallery {
-  width: 60vw;
+  width: 100vw;
   justify-content: center;
-
 }
 
 #galleryThumbs {
-    position: absolute;
-    left: 0px;
-    flex: 1 0 25%;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: flex-start;
-    align-items: flex-start;
+  position: absolute;
+  background-color: honeydew;
+  padding:5px;
+  border-radius: 10px;
+}
+
+#galleryThumbs img {
+  padding: 5px;
+  border-radius: 10px;
+  width:auto;
+}
+
+#mainViewContainer {
+  text-align: center;
 }
 
 #mainViewContainer img{

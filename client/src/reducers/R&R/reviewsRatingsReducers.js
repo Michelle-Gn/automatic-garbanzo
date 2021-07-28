@@ -1,5 +1,5 @@
 import Redux from 'redux';
-import * as actionTypes from '../actions/actionTypes'
+import * as actionTypes from '../../actions/actionTypes'
 
 const reviewsRatingsReducers = {
   ratingsReducer: (state = {}, action) => {

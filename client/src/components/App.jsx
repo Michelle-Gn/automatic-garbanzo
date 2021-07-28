@@ -1,13 +1,12 @@
 // Module Library imports
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { getNewProduct } from './components/actions/actions.js'
+import { getNewProduct } from '../actions/ProductOverview/actions.js'
 
 // Import Store Here
-import store from './store';
+import store from '../store';
 // Our Custom Modules
-import ProductOverview from './components/ProductOverview/ProductOverview.jsx';
-// import RatingsReviews from './components/ReviewsRatings/reviewsRatingsContainer.js';
+import ProductOverview from './ProductOverview/ProductOverview.jsx';
 
 // store.dispatch({type: "ADD_TO_CART", payload: "My buns"}) // test store dispatch working
 
