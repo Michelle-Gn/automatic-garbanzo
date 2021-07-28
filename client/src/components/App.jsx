@@ -1,7 +1,7 @@
 // Module Library imports
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { getNewProduct } from './components/actions/actions.js'
+import { getNewProduct } from '../actions/ProductOverview/actions.js'
 
 // Import Store Here
 import store from '../store';

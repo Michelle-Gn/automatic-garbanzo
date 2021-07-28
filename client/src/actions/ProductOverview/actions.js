@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes'
+import * as actionTypes from '../actionTypes'
 import API_KEY from '../../../../config'
 import axios from 'axios'
 import { useDispatch} from 'react-redux'

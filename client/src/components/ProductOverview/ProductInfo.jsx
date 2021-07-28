@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getNewStyles } from '../actions/actions.js'
+import { getNewStyles } from '../../actions/ProductOverview/actions.js'
 
 var ProductInfo = (props) => {
   const style = useSelector(state => state.updateStyleReducer.selectedStyle)
