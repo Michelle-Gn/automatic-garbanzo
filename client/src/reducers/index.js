@@ -1,12 +1,9 @@
 import { combineReducers } from 'redux';
 import updateStyleReducer from './styleReducer';
 import addToCartReducer from './cartReducer'
-import reviewsRatingsReducers from './reviewsRatingsReducers'
 
 export default combineReducers({
-  // Product Overview Reducers
+  // add reducers here
   addToCartReducer: addToCartReducer,
   updateStyleReducer: updateStyleReducer,
-  // Ratings Reviews Reducers
-  reviewsRatingsReducers: reviewsRatingsReducers,
 })

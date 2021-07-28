@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { UpdateSelectedStyle } from '../actions/actions.js'
+import { UpdateSelectedStyle } from '../../actions/actions.js'
 
 var StyleSelector = (props) => {
   const styles = useSelector(state => state.updateStyleReducer.styleList)
