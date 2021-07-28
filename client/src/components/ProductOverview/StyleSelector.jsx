@@ -14,7 +14,7 @@ var StyleSelector = (props) => {
     let thumb = style.photos[0].thumbnail_url
     return (
       <img
-        class="img-thumbnail"
+        className="img-thumbnail"
         key={style.style_id}
         name={style.style_id}
         src={thumb}
@@ -27,7 +27,7 @@ var StyleSelector = (props) => {
     )
   })
   return (
-    <section id="styleSelector">
+    <section id="styleSelector" className="flex-row">
       {thumbs}
     </section>
   )

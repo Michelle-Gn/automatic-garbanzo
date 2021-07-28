@@ -4,8 +4,10 @@ import {useSelector} from 'react-redux'
 var AddToCart = (props) => {
   const skus = useSelector(state => state.updateStyleReducer.selectedStyle.skus)
 
-  const [sizeSelect, setSize] = useState("Size"); // size select is set on submit
-  const [qtySelect, setQty] = useState("Qty"); // selected qty used to store qty
+  const [sizeSelect, setSize] = useState("Size");
+  const [qtysList, makeQtyList] = useState([]);
+  const [qtySelect, setQty] = useState(0);
+
   const skusElems = Object.keys(skus).map(sku =>
     <option
       key={sku}
@@ -13,26 +15,29 @@ var AddToCart = (props) => {
         {skus[sku].size}
     </option>
   );
-  let qtys = [];
+
+
   useEffect(() => {
+    let qtys = [];
     if (sizeSelect !== "Size") {
-      console.log(sizeSelect + " has " + skus[sizeSelect].quantity)
-      qtys = [];
       for (var i=1; i<skus[sizeSelect].quantity+1; i++) {
-        qtys.push(<option value={i}> {i} </option>)
+        qtys.push(<option key={i} value={i}> {i} </option>)
       }
-      console.log(qtys)
+      // bug here. how to reset selectedqty and select menu to be the same?
+      // setQty()
+      makeQtyList(qtys)
     } else {
       qtys = [];
     }
   }, [sizeSelect])
+
 
   return (
     <section id="addToCart">
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          console.log(sizeSelect, qtySelect)
+          console.log(`SKU: ${sizeSelect} with Quantity: ${qtySelect} added to Cart!` )
         } }>
       <select onChange={(e) => {
         e.preventDefault()
@@ -46,10 +51,11 @@ var AddToCart = (props) => {
         onChange={(e) => {
           e.preventDefault()
           setQty(e.target.value)
-          }}>
-        {qtys}
+          }}
+          required>
+        {qtysList.slice(0,15)}
       </select>
-      <button type="submit" class="btn-md">Add to Cart</button>
+      <button type="submit" className="btn-md">Add to Cart</button>
       </form>
     </section>
   )
