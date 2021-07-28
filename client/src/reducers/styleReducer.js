@@ -1,4 +1,4 @@
-import { productStyles } from '../../../../sampleData'
+import { productStyles } from '../../../sampleData'
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
