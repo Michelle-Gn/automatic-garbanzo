@@ -12,7 +12,7 @@ var ImageGallery = (props) => {
   const photos = style.photos;
   const thumbs = photos.map( photo =>
     <img
-      className="img-thumbnail"
+      className="flex-col"
       src={photo.thumbnail_url}
       name={photo.url}
       style={{height: '10vh'}}
@@ -20,12 +20,12 @@ var ImageGallery = (props) => {
     />
   )
   return (
-    <section>
-      <div >
+    <section id="imageGallery">
+      <div id="galleryThumbs" className="thumbscroll" >
         {thumbs}
       </div>
-      <div>
-        <img src={selectedThumb} style={{height: '70vh'}} />
+      <div id="mainViewContainer" >
+        <img  src={selectedThumb}  />
       </div>
     </section>
   )
