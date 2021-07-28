@@ -8,22 +8,26 @@ var ProductInfo = (props) => {
 
   return (
     <section id="productInfo">
-      <div className="flex-row flex-split">
-        <div className="flex-col flex-left">
-          <div id="reviewbar">Review Placeholder</div>
-          <div>Style : {style.name}</div>
-          <div> Price : {style.sale_price ? style.sale_price : style.original_price}</div>
-        </div>
-        <div> {product.slogan}</div>
-        <div className="flex-col flex-right">
-          <div> {product.category}</div>
-          <div> {product.name}</div>
+      <div className="">
+        <div className="row">
+          <div id="reviewbar" className="col-md-4">
+            <span>Review Stars</span>
+            <a href="#">See all Reviews</a>
+            <div>{product.slogan}</div>
+          </div>
+          <div className="col-md-4 display-5 text-center">
+            {product.name}
+          </div>
+          <div className="col-md-3 text-end" >
+            <div>{style.name}</div>
+            <div>{style.sale_price ? style.sale_price : style.original_price}</div>
+            <div> {product.category}</div>
+          </div>
+        <div className="row">
+          <div className="col-md-12 text-center"> {product.description}</div>
         </div>
       </div>
-      <br/>
-      <div style={{'textAlign' : 'center'}}> {product.description}</div>
-      <br/>
-
+      </div>
     </section>
   )
 }

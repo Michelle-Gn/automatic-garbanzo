@@ -10,7 +10,7 @@ var ImageGallery = (props) => {
   const photos = style.photos;
   const thumbs = photos.map( photo =>
     <img
-      className="flex-col"
+      className=""
       src={photo.thumbnail_url}
       key={photo.url}
       name={photo.url}
@@ -21,7 +21,7 @@ var ImageGallery = (props) => {
 
   return (
     <section id="imageGallery">
-      <div id="galleryThumbs" className="flex-col flex-center" >
+      <div id="galleryThumbs" className="" >
         {thumbs}
       </div>
       <div id="mainViewContainer" >
