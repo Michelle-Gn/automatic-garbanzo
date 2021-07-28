@@ -17,6 +17,8 @@ class Questions extends React.Component {
 
   componentDidMount() {
     this.getQuestions();
+    /* instead of this.getQuestions(), would do props.getQuestion()*/
+    /* instead of setState, would use dispatch*/
   }
 
   getQuestions() {
