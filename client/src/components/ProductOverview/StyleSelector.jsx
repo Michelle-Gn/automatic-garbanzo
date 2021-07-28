@@ -9,6 +9,7 @@ var StyleSelector = (props) => {
   useEffect(()=>{
     dispatch(getNewStyles(product.id))
   }, [product])
+
   const dispatch = useDispatch()
   const thumbs = styles.map(style => {
     let thumb = style.photos[0].thumbnail_url
