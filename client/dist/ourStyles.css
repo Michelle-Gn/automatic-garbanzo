@@ -1,0 +1,39 @@
+html {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: honeydew;
+}
+
+.AppContainer {
+  margin: 0.25em;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#imageGallery {
+  width: 60vw;
+  justify-content: center;
+
+}
+
+#galleryThumbs {
+    position: absolute;
+    left: 0px;
+    flex: 1 0 25%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#mainViewContainer img{
+  height: 70vh;
+}
+
+/* Testing Zoom functionality with CSS */
