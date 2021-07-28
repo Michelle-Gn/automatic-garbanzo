@@ -8,7 +8,7 @@ const addToCartReducer = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.ADD_TO_CART:
       return [
-        ...state,
+        // ...state,
         action.payload
         ];
     default:
