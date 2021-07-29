@@ -1,8 +1,13 @@
 import Redux from 'redux';
 import * as actionTypes from '../../actions/actionTypes'
 
+const initialState = {
+  reviews: [],
+  visibleReviews: []
+};
+
 const reviewListReducers = {
-  reviewListReducer: (state = [], action) => {
+  reviewListReducer: (state = initialState, action) => {
     switch(action.type) {
     case actionTypes.CHANGE_REVIEWS:
       return action.reviews;
@@ -11,7 +16,7 @@ const reviewListReducers = {
     }
   },
 
-  addReviewsReducer: (state = [], action) => {
+  addReviewsReducer: (state = initialState, action) => {
     switch(action.type) {
     case actionTypes.ADD_VISIBLE_REVIEWS:
       return visibleReviews;
