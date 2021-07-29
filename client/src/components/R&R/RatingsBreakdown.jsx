@@ -10,14 +10,19 @@ const RatingsBreakdown = (props) => {
 
   return (
     <div id='breakdown'>
-      <h1>:: ratings breakdown ::</h1>
+      {/* AVERAGE RATING (NUMERIC AND STARS) */}
       <span id='starAverage'>
+        {starAverage.toFixed(1)}
         {/* productId is filler */}
         <StarRating productId='16058' starCount={starAverage} />
       </span>
+
+      {/* BAR GRAPHS OF RATINGS */}
       <div id='rating-bars'>
         <RatingBar />
       </div>
+
+      {/* GRAPHS FOR CHARACTERISTICS */}
       <div id='characteristics'>
         <CharacteristicBar />
       </div>
