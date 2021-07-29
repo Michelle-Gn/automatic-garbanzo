@@ -6,7 +6,7 @@ import AddToCart from './AddToCart.jsx'
 
 var ProductOverview = (props) => {
   return (
-    <div>
+    <div className="jumbotron">
       <ProductInfo />
       <StyleSelector />
       <AddToCart />
