@@ -10,7 +10,16 @@ const reviewsRatingsReducers = {
       return state;
     }
   },
-  totalRatingsReducer: () => {},
+
+  totalRatingsReducer: (state = 0, action) => {
+    switch (action.type) {
+    case actionTypes.SET_TOTAL_RATINGS_AND_AVERAGE:
+      return action.totalRatings;
+    default:
+      return state;
+    }
+  },
+
   starAverageReducer: () => {}
 };
 
