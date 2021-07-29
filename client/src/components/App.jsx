@@ -7,6 +7,7 @@ import { getNewProduct } from '../actions/ProductOverview/actions.js'
 import store from '../store';
 // Our Custom Modules
 import ProductOverview from './ProductOverview/ProductOverview.jsx';
+import RatingsReviews from './R&R/RatingsReviews.jsx';
 
 // store.dispatch({type: "ADD_TO_CART", payload: "My buns"}) // test store dispatch working
 
@@ -22,7 +23,7 @@ var App = () => {
     <Provider store={store} >
       <div className="AppContainer">
         <ProductOverview />
-        {/* <RatingsReviews /> */}
+        <RatingsReviews />
       </div>
     </Provider>
   )
