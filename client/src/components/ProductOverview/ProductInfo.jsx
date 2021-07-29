@@ -8,13 +8,13 @@ var ProductInfo = (props) => {
 
   return (
     <section id="productInfo">
-      <div className="">
-        <div className="row">
-          <div id="reviewbar" className="col-md-4">
+      <div >
+        <div >
+          <div id="reviewbar">
             <span>Review Stars</span>
             <a href="#">See all Reviews</a>
           </div>
-          <div className="col-md-4 display-4 text-center">
+          <div>
             {product.name}
           </div>
         </div>

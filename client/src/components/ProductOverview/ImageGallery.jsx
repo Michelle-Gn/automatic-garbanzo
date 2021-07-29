@@ -15,7 +15,7 @@ var ImageGallery = (props) => {
   const photos = style.photos;
 
   return (
-    <section id="imageGallery" className="row justify-content-between">
+    <section id="imageGallery">
 
       { view === 'default' ?
       <ExpandedView photos={photos} /> :

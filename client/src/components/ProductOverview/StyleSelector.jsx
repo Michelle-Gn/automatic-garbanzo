@@ -14,7 +14,6 @@ var StyleSelector = (props) => {
     let thumb = style.photos[0].thumbnail_url
     return (
         <img
-          className="col-1 rounded-circle"
           key={style.style_id}
           name={style.style_id}
           src={thumb}
@@ -29,7 +28,6 @@ var StyleSelector = (props) => {
   return (
     <section
       id="styleSelector"
-      className="row align-items-start img-responsive justify-content-center"
       style={{height: '15vh'}}>
       {thumbs}
     </section>

@@ -35,7 +35,7 @@ var AddToCart = (props) => {
 
 
   return (
-    <section id="addToCart" className="col-md-2 text-end">
+    <section id="addToCart">
       <div>{style.name} {product.category}</div>
       <div>{style.sale_price ? style.sale_price : style.original_price}</div>
       <div>{product.slogan}</div>
@@ -46,7 +46,6 @@ var AddToCart = (props) => {
           console.log(`SKU: ${sizeSelect} with Quantity: ${qtySelect} added to Cart!` )
         } }>
       <select
-        className="form-control"
         onChange={(e) => {
           e.preventDefault()
           setSize(e.target.value)
@@ -56,7 +55,6 @@ var AddToCart = (props) => {
       </select>
       <select
         name="qtySelect"
-        className="form-control"
         onChange={(e) => {
           e.preventDefault()
           setQty(e.target.value)
@@ -64,7 +62,7 @@ var AddToCart = (props) => {
           required>
         {qtysList.slice(0,15)}
       </select>
-      <button type="submit" className="btn btn-primary">Add to Cart</button>
+      <button type="submit">Add to Cart</button>
       </form>
     </section>
   )
