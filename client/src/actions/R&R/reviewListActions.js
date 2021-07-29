@@ -1,6 +1,6 @@
 import * as actionTypes from '../actionTypes'
 
-export const reviewsRatingsActions = {
+const reviewListActions = {
   changeReviewList = (reviews) => ({
     type: actionTypes.CHANGE_REVIEWS,
     reviews
@@ -11,3 +11,5 @@ export const reviewsRatingsActions = {
     visibleReviews: reviews
   })
 };
+
+export default reviewListActions;

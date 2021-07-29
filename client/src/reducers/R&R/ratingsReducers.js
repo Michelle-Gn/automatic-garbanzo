@@ -7,7 +7,7 @@ const initialState = {
   starAverage: 0
 };
 
-const reviewsRatingsReducers = {
+const ratingsReducers = {
   ratingsReducer: (state = initialState, action) => {
     switch (action.type) {
     case actionTypes.GET_RATINGS:
@@ -36,4 +36,4 @@ const reviewsRatingsReducers = {
   }
 };
 
-export default reviewsRatingsReducers;
+export default ratingsReducers;

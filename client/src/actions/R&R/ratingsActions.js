@@ -1,7 +1,7 @@
 import * as actionTypes from '../actionTypes'
 
-export const reviewsRatingsActions = {
-  getMetaData: (meta) => ({
+const ratingsActions = {
+  getRatingsMeta: (meta) => ({
     type: actionTypes.GET_RATINGS,
     ratingsMeta: meta
   }),
@@ -21,3 +21,5 @@ export const reviewsRatingsActions = {
     };
   }
 };
+
+export default ratingsActions;
