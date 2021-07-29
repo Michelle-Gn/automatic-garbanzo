@@ -1,14 +1,8 @@
 import React from 'react';
 import Questions from './Questions.jsx';
 
-	class QuestionsAnswers extends React.Component {
-	  constructor (props) {
-	    super (props);
-	    this.state = {
-	    view: 'default'};
-	  }
+	const QuestionsAnswers = () => {
 
-	  render() {
 	    return (
 	      <div>
 	        <h3> QUESTIONS AND ANSWERS </h3>
@@ -19,7 +13,7 @@ import Questions from './Questions.jsx';
 	                <input
 	                  className="form-control"
 	                  type="text"
-	                  value= "HAVE A QUESTION? SEARCH FOR ANSWERS..."/>
+	                  placeholder= "HAVE A QUESTION? SEARCH FOR ANSWERS..."/>
 	                <button className="btn hidden-sm-down">
 	                  <span className="glyphicon glyphicon-search"></span>
 	                </button>
@@ -38,7 +32,6 @@ import Questions from './Questions.jsx';
 	        </div>
 	      </div>
 	    )
-	  }
 	}
 
 	export default QuestionsAnswers
