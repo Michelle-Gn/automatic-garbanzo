@@ -12,7 +12,8 @@ const RatingsBreakdown = (props) => {
     <div id='breakdown'>
       <h1>:: ratings breakdown ::</h1>
       <span id='starAverage'>
-        <StarRating starCount={starAverage}/>
+        {/* productId is filler */}
+        <StarRating productId='16058' starCount={starAverage} />
       </span>
       <div id='rating-bars'>
         <RatingBar />
