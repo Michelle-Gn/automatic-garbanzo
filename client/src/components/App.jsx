@@ -22,8 +22,9 @@ var App = () => {
     // Provider wraps Sub components to provide them access to the store
     <Provider store={store} >
       <div className="AppContainer">
-        <ProductOverview />
+        {/* <ProductOverview /> */}
         {/* <RatingsReviews /> */}
+        <QuestionsAnswers/>
       </div>
     </Provider>
   )
