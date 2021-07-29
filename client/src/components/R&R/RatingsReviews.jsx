@@ -39,8 +39,12 @@ const ReviewsRatings = (props) => {
     <div id='ratings-reviews-module'>
       <h4>Ratings &amp; Reviews</h4>
       <div id='ratings-reviews'>
-        <RatingsBreakdown />
-        <ReviewList />
+        <div>
+          <RatingsBreakdown />
+        </div>
+        <div>
+          <ReviewList />
+        </div>
       </div>
 
     </div>
