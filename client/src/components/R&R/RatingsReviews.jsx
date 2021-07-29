@@ -12,17 +12,16 @@ const ReviewsRatings = (props) => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    axios
-      .get(`${config.URL}meta/?product_id=${product.id}`)
-      .then(response => handleRatingsUpdate(response.data))
-      .catch(err => console.log('Error GET ratingsMeta', err));
-  }, [])
-  // async function fetchData() {
-  //   let response = await axios(`${config.URL}meta/?product_id=${product.id}`);
-  //   let results = await response.data;
-  //   handleRatingsUpdate(results);
-  // }
+  // useEffect(() => {
+  //   axios.get(`${config.URL}meta/?product_id=${product.id}`)
+  //     .then(response => handleRatingsUpdate(response.data))
+  //     .catch(err => console.log('Error GET ratingsMeta', err));
+  // }, [])
+  async function fetchData() {
+    let response = await axios(`${config.URL}meta/?product_id=${product.id}`);
+    let results = await response.data;
+    handleRatingsUpdate(results);
+  }
 
   // useEffect(() => {
   //   fetchData();
