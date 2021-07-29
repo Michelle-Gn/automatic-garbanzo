@@ -13,21 +13,24 @@ var StyleSelector = (props) => {
   const thumbs = styles.map(style => {
     let thumb = style.photos[0].thumbnail_url
     return (
-      <img
-        className=""
-        key={style.style_id}
-        name={style.style_id}
-        src={thumb}
-        alt="aThumb"
-        style={{height: '5vh'}}
-        onClick={(e) => {
-          dispatch(UpdateSelectedStyle(e.target.name))
-        }}
-        />
+        <img
+          className="col-1 rounded-circle"
+          key={style.style_id}
+          name={style.style_id}
+          src={thumb}
+          alt="aThumb"
+          style={{ height: '100%', padding: '5px'}}
+          onClick={(e) => {
+            dispatch(UpdateSelectedStyle(e.target.name))
+          }}
+          />
     )
   })
   return (
-    <section id="styleSelector" className="">
+    <section
+      id="styleSelector"
+      className="row align-items-start img-responsive justify-content-center"
+      style={{height: '15vh'}}>
       {thumbs}
     </section>
   )

@@ -13,20 +13,11 @@ var ProductInfo = (props) => {
           <div id="reviewbar" className="col-md-4">
             <span>Review Stars</span>
             <a href="#">See all Reviews</a>
-            <div>{product.slogan}</div>
           </div>
-          <div className="col-md-4 display-5 text-center">
+          <div className="col-md-4 display-4 text-center">
             {product.name}
           </div>
-          <div className="col-md-3 text-end" >
-            <div>{style.name}</div>
-            <div>{style.sale_price ? style.sale_price : style.original_price}</div>
-            <div> {product.category}</div>
-          </div>
-        <div className="row">
-          <div className="col-md-12 text-center"> {product.description}</div>
         </div>
-      </div>
       </div>
     </section>
   )
