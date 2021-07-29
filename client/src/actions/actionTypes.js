@@ -3,6 +3,7 @@
 
 // Used in Product Overview Reducers
 export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const UPDATE_SELECTED_STYLE = "UPDATE_SELECTED_STYLE";
 // Used in Reviews Reducers
 export const GET_RATINGS = "GET_RATINGS";
