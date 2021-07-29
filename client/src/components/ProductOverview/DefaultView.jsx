@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ThumbCarousel = ({photos, setThumb}) => {
+const DefaultView = ({photos, setThumb}) => {
 
   const thumbs = photos.map( photo =>
     <span className="col-2 justify-content-evenly">
@@ -42,4 +42,4 @@ const ThumbCarousel = ({photos, setThumb}) => {
   )
 }
 
-export default ThumbCarousel;
+export default DefaultView;

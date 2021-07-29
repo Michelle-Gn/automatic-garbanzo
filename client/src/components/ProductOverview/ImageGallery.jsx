@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 
 import AddToCart from './AddToCart.jsx'
-import ThumbCar from './ThumbCarousel.jsx'
+import ExpandedView from './ExpandedView.jsx'
+import DefaultView from './DefaultView.jsx'
 
 
 var ImageGallery = (props) => {
@@ -15,10 +16,11 @@ var ImageGallery = (props) => {
 
   return (
     <section id="imageGallery" className="row justify-content-between">
-      <ThumbCar photos={photos} setThumb={setThumb}/>
-      <div id="mainViewContainer" className="col-md-8 overflow-hidden justify-content-center" >
-        <img  src={selectedThumb} style={{height: '60vh'}} />
-      </div>
+
+      { view === 'default' ?
+      <ExpandedView photos={photos} /> :
+      <DefaultView photos={photos} setThumb={setThumb} />
+       }
       <AddToCart />
     </section>
   )
