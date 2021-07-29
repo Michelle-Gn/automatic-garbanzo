@@ -2,9 +2,9 @@ import Redux from 'redux';
 import * as actionTypes from '../../actions/actionTypes'
 
 const initialState = {
-  ratingsMeta = {},
-  totalRatings = 0,
-  starAverage = 0
+  ratingsMeta: {},
+  totalRatings: 0,
+  starAverage: 0
 };
 
 const reviewsRatingsReducers = {
