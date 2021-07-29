@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import config from '../../../../config.js'
+import config from '../../../../config.js';
+import axios from 'axios';
 
 const StarRating = ({productId, starCount}) => {
   const [starAverage, setStarAverage] = useState(0);
@@ -10,17 +11,21 @@ const StarRating = ({productId, starCount}) => {
 
   // GET average stars
   const getRatingsAverage = (id) => {
-    axios.get(`${config.URL}meta/?product_id=${id}`)
+    return axios.get(`${config.URL}reviews/meta/?product_id=${id}`, {
+      headers: {'Authorization': config.TOKEN}
+    })
       .then(result => {
         const ratings = result.data.ratings;
-        let total = 0;
-        let avg = 0;
+        let totalStars = 0;
+        let totalReviews = 0;
 
-        for (let k in ratings) {
-          total += ratings[k];
-          avg += (Number(k) * ratings[k]);
+        for (let key in ratings) {
+          for (let i = 0; i < Number(ratings[key]); i++) {
+            totalStars += Number(key);
+          }
+          totalReviews += Number(ratings[key]);
         }
-        return avg / total;
+        return totalStars / totalReviews;
       })
       .catch(err => console.log('getRatingsAverage failed', err))
   }
