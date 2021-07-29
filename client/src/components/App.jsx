@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from '../store';
 // Our Custom Modules
 import ProductOverview from './ProductOverview/ProductOverview.jsx';
+import QuestionsAnswers from './QuestionsAnswers/QuestionsAnswers.jsx';
 
 
 var App = () => {
@@ -12,6 +13,7 @@ var App = () => {
     // Provider wraps Sub components to provide them access to the store
     <Provider store={store} >
       <ProductOverview />
+      <QuestionsAnswers />
     </Provider>
   )
 }
