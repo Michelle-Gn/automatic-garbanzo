@@ -8,6 +8,6 @@ export const reviewsRatingsActions = {
 
   addVisibleReviews = (reviews) => ({
     type: actionTypes.ADD_VISIBLE_REVIEWS,
-    addVisibleReviews: reviews
+    visibleReviews: reviews
   })
 };
