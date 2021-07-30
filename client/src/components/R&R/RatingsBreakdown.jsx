@@ -9,6 +9,7 @@ const RatingsBreakdown = (props) => {
   const starAverage = useSelector(state => state.starAverage.starAverage)
   const ratings = useSelector(state => state.ratingsMeta.ratings)
   const totalRatings = useSelector(state => state.totalRatings)
+  const characteristics = useSelector(state => state.ratingsMeta.ratingsMeta.characteristics)
 
   let ratingsDist = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
   if (ratings) {
@@ -36,7 +37,11 @@ const RatingsBreakdown = (props) => {
 
       {/* GRAPHS FOR CHARACTERISTICS */}
       <div id='characteristics'>
-        <CharacteristicBar />
+        {
+          Object.keys(characteristics).map((type, i) => (
+            <CharacteristicBar key={`${type}: ${i}`} characteristic={type} charRating={characteristics[type].value} />
+          ))
+        }
       </div>
     </div>
   )
