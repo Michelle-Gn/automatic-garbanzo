@@ -7,6 +7,14 @@ import CharacteristicBar from './CharacteristicBar.jsx';
 
 const RatingsBreakdown = (props) => {
   const starAverage = useSelector(state => state.starAverage.starAverage)
+  const ratings = useSelector(state => state.ratingsMeta.ratings)
+  const totalRatings = useSelector(state => state.totalRatings)
+
+  let ratingsDist = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
+  if (ratings) {
+    ratingsDist = Object.assign({}, ratingsDist, ratings);
+  }
+
 
   return (
     <div id='breakdown'>
@@ -19,7 +27,11 @@ const RatingsBreakdown = (props) => {
 
       {/* BAR GRAPHS OF RATINGS */}
       <div id='rating-bars'>
-        <RatingBar />
+        {
+          Object.keys(ratingsDist).map((star, i) => (
+            <RatingBar key={`${star}: ${i}`} starNum={star} starRating={ratingsDist[star]} setTotalRatings={totalRatings} />
+          ))
+        }
       </div>
 
       {/* GRAPHS FOR CHARACTERISTICS */}
