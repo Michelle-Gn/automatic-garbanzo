@@ -15,15 +15,17 @@ const ratingsActions = {
   }),
 
   setTotalRatings: (meta) => {
-    return (dispatch) => {
-      const totalRatings = Object.values(meta.ratings).reduce((sum, key) => sum + parseFloat(key));
-      const ratingSum = 0;
-      for (var rating in meta.ratings) {
-        const currentRating = meta.ratings[rating] * Number(rating);
-        ratingSum += currentRating;
-      }
-      dispatch(updateTotalRatings({totalRatings, ratingSum}))
+    const totalRatings = Object.values(meta.ratings).reduce((a, b) => Number(a) + Number(b));
+    let ratingSum = 0;
+    for (let rating in meta.ratings) {
+      const currentRating = Number(meta.ratings[rating]) * Number(rating);
+      ratingSum += currentRating;
     }
+    return {
+      type: actionTypes.SET_TOTAL_RATINGS_AND_AVERAGE,
+      totalRatings,
+      starAverage: ratingSum / totalRatings
+    };
   }
 };
 

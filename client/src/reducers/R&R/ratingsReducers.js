@@ -2,38 +2,9 @@ import Redux from 'redux';
 import * as actionTypes from '../../actions/actionTypes'
 
 const initialState = {
-  ratingsMeta: {
-    "product_id": "16058",
-    "ratings": {
-        "2": "1",
-        "3": "1",
-        "5": "11"
-    },
-    "recommended": {
-        "false": "8",
-        "true": "5"
-    },
-    "characteristics": {
-        "Fit": {
-            "id": 53846,
-            "value": "4.6406250000000000"
-        },
-        "Length": {
-            "id": 53847,
-            "value": "4.8245614035087719"
-        },
-        "Comfort": {
-            "id": 53848,
-            "value": "3.1403508771929825"
-        },
-        "Quality": {
-            "id": 53849,
-            "value": "3.1578947368421053"
-        }
-    }
-  },
-  totalRatings: 13,
-  starAverage: 4.615384615384615
+  ratingsMeta: {},
+  totalRatings: 0,
+  starAverage: 0
 };
 
 const ratingsReducers = {
