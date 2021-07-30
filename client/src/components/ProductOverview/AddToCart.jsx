@@ -1,10 +1,13 @@
 import React, {useState, useEffect } from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import { addToCart } from '../../actions/ProductOverview/actions.js';
 
 var AddToCart = (props) => {
   const skus = useSelector(state => state.updateStyleReducer.selectedStyle.skus)
   const style = useSelector(state => state.updateStyleReducer.selectedStyle)
   const product = useSelector(state => state.getNewProductReducer.selectedProduct)
+
+  const dispatch = useDispatch();
 
   const [sizeSelect, setSize] = useState("Size");
   const [qtysList, makeQtyList] = useState([]);
@@ -17,7 +20,6 @@ var AddToCart = (props) => {
         {skus[sku].size}
     </option>
   );
-
 
   useEffect(() => {
     let qtys = [];
@@ -43,7 +45,7 @@ var AddToCart = (props) => {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          console.log(`SKU: ${sizeSelect} with Quantity: ${qtySelect} added to Cart!` )
+          dispatch(addToCart(sizeSelect, qtySelect));
         } }>
       <select
         onChange={(e) => {

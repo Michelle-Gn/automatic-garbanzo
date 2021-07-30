@@ -1,32 +1,89 @@
 import React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
-import Col from 'react-bootstrap/Col'
+import { Carousel, Col, Row} from 'react-bootstrap'
+import {useEffect} from 'react'
+
+import AddToCart from './AddToCart.jsx'
 
 
-const DefaultView = ({photos, setThumb}) => {
+const ExpandedView = ({photos, setView, view}) => {
+
+  useEffect(() => {
+    // zoom functionality here
+  const zoomBoxes = document.querySelectorAll(".zoom-view");
+  zoomBoxes.forEach(function (image) {
+    var imageCss = window.getComputedStyle(image, false);
+    var imageUrl = imageCss.backgroundImage.slice(4, -1).replace(/['"]/g, "");
+
+    var imageSrc = new Image();
+    imageSrc.onload = () => {
+      var imageWidth = imageSrc.naturalWidth;
+      var imageHeight = imageSrc.naturalHeight;
+      var ratio = imageHeight / imageWidth;
+
+      var percentage = ratio * 100 + "%";
+      image.style.paddingBottom = percentage;
+
+      image.onmousemove = (e) => {
+        var boxWidth = image.clientWidth;
+        var x = e.pageX;
+        var y = e.pageY;
+        var xPercent = x / (boxWidth / 100) + "%";
+        var yPercent = y / ((boxWidth * ratio) / 100) + "%";
+        Object.assign(image.style, {
+          cursor: 'zoom-out',
+          backgroundPosition: xPercent + " " + yPercent,
+          backgroundSize: imageWidth + "px"
+        });
+      };
+       image.onmouseleave = (e) => {
+        //  console.log("mouse left")
+          Object.assign(image.style, {
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          });
+        }
+      }
+      imageSrc.src = imageUrl;
+    })
+  })
+
 
   // Create Carousel-Items here.
   const photoElems = photos.map( (photo, index) =>
   <Carousel.Item className="justify-content-center">
     <Col xs={12} className="justify-content-center ">
-      <div style={{'text-align': 'center'}}>
-      <img
-        src={photo.url}
-        key={photo.url}
-        name={photo.url}
-        style={{height: '70vh', margin: 'auto'}}
-        onClick={(e) => { console.log("Expanded Image Clicked") }}
-      />
+      <div className="image-container" style={{'text-align': 'center'}}>
+        <div
+          className="image zoom-view"
+          style={{
+            backgroundImage: `url(${photo.url})`,
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            cursor: 'zoom-out',
+            display: 'block',
+            maxWidth: '100%',
+            paddingBottom: '10em',
+            width: '100em',}}
+            onClick={() => {setView('default')}} >
+        </div>
       </div>
     </Col>
   </Carousel.Item>
   )
 
   return (
+    <div>
       <Carousel wrap={false} interval={null}>
         {photoElems}
       </Carousel>
+      <Row xs={'12'}>
+        <AddToCart style={{
+          backgroundColor: 'red'
+        }}/>
+      </Row>
+    </div>
   )
 }
 
-export default DefaultView;
+export default ExpandedView;

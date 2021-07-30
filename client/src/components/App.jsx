@@ -8,8 +8,6 @@ import store from '../store';
 // Our Custom Modules
 import ProductOverview from './ProductOverview/ProductOverview.jsx';
 
-// store.dispatch({type: "ADD_TO_CART", payload: "My buns"}) // test store dispatch working
-
 var App = () => {
 
   useEffect(() => {
