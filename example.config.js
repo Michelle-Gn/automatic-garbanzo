@@ -1,4 +1,3 @@
-module.exports = {
-  URL: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/', //API URL
-  TOKEN: 'ADD_TOKEN_HERE'
-};
+var API_KEY = 'FILL WITH YOUR GITHUB TOKEN';
+
+export default API_KEY;

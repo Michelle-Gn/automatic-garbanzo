@@ -18,7 +18,7 @@ export const getNewProduct = (selectedProductId) => {
     const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/products/'+ selectedProductId
     const options = {
       headers: {
-        'Authorization': API_KEY.TOKEN
+        'Authorization': API_KEY
       }
     }
     axios.get(url, options).then(res => {

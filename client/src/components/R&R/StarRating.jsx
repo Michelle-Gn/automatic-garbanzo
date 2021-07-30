@@ -11,8 +11,8 @@ const StarRating = ({productId, starCount}) => {
 
   // GET average stars
   const getRatingsAverage = (id) => {
-    return axios.get(`${config.URL}reviews/meta/?product_id=${id}`, {
-      headers: {'Authorization': config.TOKEN}
+    return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/meta/?product_id=${id}`, {
+      headers: {'Authorization': config}
     })
       .then(result => {
         const ratings = result.data.ratings;
