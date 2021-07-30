@@ -6,10 +6,10 @@ import CharacteristicBar from './CharacteristicBar.jsx';
 
 
 const RatingsBreakdown = (props) => {
-  const starAverage = useSelector(state => state.starAverage.starAverage)
-  const ratings = useSelector(state => state.ratingsMeta.ratingsMeta.ratings)
-  const totalRatings = useSelector(state => state.totalRatings.totalRatings)
-  const characteristics = useSelector(state => state.ratingsMeta.ratingsMeta.characteristics)
+  const starAverage = useSelector(state => state.starAverage)
+  const ratings = useSelector(state => state.ratingsMeta.ratings)
+  const totalRatings = useSelector(state => state.totalRatings)
+  const characteristics = useSelector(state => state.ratingsMeta.characteristics) || {}
 
   let ratingsDist = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
   if (ratings) {
@@ -20,9 +20,8 @@ const RatingsBreakdown = (props) => {
     <div id='breakdown'>
       {/* AVERAGE RATING (NUMERIC AND STARS) */}
       <span id='starAverage'>
-        {starAverage.toFixed(1)}
-        {/* productId is filler */}
-        <StarRating productId='16058' starCount={starAverage} />
+        {Number(starAverage).toFixed(1)}
+        <StarRating starCount={starAverage} />
       </span>
 
       {/* BAR GRAPHS OF RATINGS */}
@@ -47,3 +46,5 @@ const RatingsBreakdown = (props) => {
 };
 
 export default RatingsBreakdown;
+
+
