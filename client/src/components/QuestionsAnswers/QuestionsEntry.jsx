@@ -4,6 +4,7 @@ import getAnswers from '../../actions/Q&A/getAnswers.js';
 
 import Answer from './Answer.jsx';
 import Helpful from './Helpful.jsx';
+import AddAnswer from './AddAnswer.jsx';
 
 var QuestionsEntry = (props) => {
     // make api call to get answer using props
@@ -31,7 +32,7 @@ var QuestionsEntry = (props) => {
 			<div>
 				<div> {'Q: ' + props.question.question_body} </div>
 				<Helpful question = {props.question} />
-				<span>Add Answer</span>
+				<AddAnswer questionId = {props.question.question_id} />
 				<div>
 				{answerList.map((answer) => (
 					<Answer answer = {answer} key = {answer.answer_id}/>
