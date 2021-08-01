@@ -687,3 +687,63 @@ export const productQuestions = {
         }
     ]
 }
+
+
+//Get /qa/questions/95017/answers
+export const productAnswer = {
+    "question": "95017",
+    "page": 1,
+    "count": 5,
+    "results": [
+        {
+            "answer_id": 901152,
+            "body": "It ships from the facility in Tulsa",
+            "date": "2017-11-04T00:00:00.000Z",
+            "answerer_name": "toofast",
+            "helpfulness": 25,
+            "photos": []
+        },
+        {
+            "answer_id": 1991970,
+            "body": "Ships from Texas.",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "raerae",
+            "helpfulness": 2,
+            "photos": []
+        },
+        {
+            "answer_id": 1991971,
+            "body": "Ragnarok",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "Loki",
+            "helpfulness": 0,
+            "photos": [
+                {
+                    "id": 1752385,
+                    "url": "blob:http://localhost:3001/636a5124-e710-424f-9ab5-47903a51c404"
+                }
+            ]
+        },
+        {
+            "answer_id": 1991663,
+            "body": "Ships from San Francisco",
+            "date": "2021-06-15T00:00:00.000Z",
+            "answerer_name": "raerae",
+            "helpfulness": 0,
+            "photos": []
+        },
+        {
+            "answer_id": 1992047,
+            "body": "some answer",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "rae",
+            "helpfulness": 0,
+            "photos": [
+                {
+                    "id": 1752407,
+                    "url": "blob:http://localhost:3001/f90e8268-4118-4525-b273-539e37bbcf3e"
+                }
+            ]
+        }
+    ]
+}
