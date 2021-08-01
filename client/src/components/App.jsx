@@ -13,10 +13,10 @@ import QuestionsAnswers from './QuestionsAnswers/QuestionsAnswers.jsx';
 
 var App = () => {
 
-  useEffect(() => {
-    store.dispatch(getNewProduct('16058'),
-    [])
-  })
+  // useEffect(() => {
+  //   store.dispatch(getNewProduct('16058'),
+  //   [])
+  // })
 
   return (
     // Provider wraps Sub components to provide them access to the store
