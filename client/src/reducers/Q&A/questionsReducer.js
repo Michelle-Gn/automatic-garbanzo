@@ -8,9 +8,9 @@ const initialState = [];
 const getQuestionsReducer = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.GET_QUESTIONS:
-      return [action.payload];
+      return action.payload;
     default:
-      return state;
+  return state;
   }
 }
 
