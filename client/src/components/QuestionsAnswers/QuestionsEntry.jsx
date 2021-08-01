@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import getAnswers from '../../actions/Q&A/getAnswers.js';
 
-import Answer from './Answer.jsx'
+import Answer from './Answer.jsx';
+import Helpful from './Helpful.jsx';
 
-	var QuestionsEntry = (props) => {
+var QuestionsEntry = (props) => {
     // make api call to get answer using props
-		const dispatch = useDispatch();
 		console.log(props.question.question_id);
 		const [answers, setAnswers] = useState([]);
     useEffect(() => {getAnswers(props.question.question_id)
@@ -15,12 +15,13 @@ import Answer from './Answer.jsx'
 		  })
 			.catch((error) => {console.log(error)})}, []);
 
-		// const localState = useSelector(((globalState) => globalState.answers));
-
 		// slice answer list to get only 2 answers
 		const [count, setCount] = useState(2);
 	  let answerList = answers.slice(0, count);
-		console.log(answerList);
+
+		// question helpfulness
+		 // update
+		const [helpfulness, setHelpfulness] = useState(props.question.question_helpfulness)
 
 		// map over each entry
 		// sort answer list
@@ -29,8 +30,7 @@ import Answer from './Answer.jsx'
 			return (
 			<div>
 				<div> {'Q: ' + props.question.question_body} </div>
-				<span className = "helpful">Helpful?</span>
-				<span className = "helpfulness-stats"> Yes ({props.question.question_helpfulness})</span>
+				<Helpful question = {props.question} />
 				<span>Add Answer</span>
 				<div>
 				{answerList.map((answer) => (
@@ -42,6 +42,6 @@ import Answer from './Answer.jsx'
 		} else {
 			return null;
 		}
-	}
+}
 
 	export default QuestionsEntry
