@@ -4,6 +4,7 @@ import addToCartReducer from './AddtoCart/cartReducer'
 import reviewsRatingsReducers from './R&R/reviewsRatingsReducers'
 import getNewProductReducer from './ProductOverview/getNewProductReducer'
 import getQuestionsReducer from './Q&A/questionsReducer'
+import getAnswersReducer from './Q&A/answersReducer'
 
 export default combineReducers({
 
@@ -11,5 +12,7 @@ export default combineReducers({
   // Product Overview Reducers
   addToCartReducer: addToCartReducer,
   updateStyleReducer: updateStyleReducer,
-  questions: getQuestionsReducer
+  // Q&A Reducers
+  questions: getQuestionsReducer,
+  answers: getAnswersReducer
 })
