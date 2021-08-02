@@ -1,50 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Questions from './Questions.jsx';
+import SearchBar from './SearchBar.jsx';
 import getQuestions from '../../actions/Q&A/getQuestions.js';
 
-	const QuestionsAnswers = (props) => {
+const QuestionsAnswers = (props) => {
 
-    const dispatch = useDispatch();
-		useEffect(() => {getQuestions(dispatch, '16058', 1, 1000)}, []);
-		const localState = useSelector(((globalState) => globalState.questions));
+	const dispatch = useDispatch();
+	useEffect(() => {getQuestions(dispatch, '16058', 1, 1000)}, []);
+	const localState = useSelector(((globalState) => globalState.questions));
+	const sortedLocalState = localState.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
 
-	  const [count, setCount] = useState(4);
-		let qaList = localState.slice(0, count);
+	const [count, setCount] = useState(4);
+	let qaList = sortedLocalState.slice(0, count);
 
-		if (qaList.length !== 0) {
-			return (
+	if (qaList.length !== 0) {
+		return (
+			<div>
+				<SearchBar/>
 				<div>
-					<h3> QUESTIONS AND ANSWERS </h3>
-					<nav className="navbar">
-						<div className="row">
-							<div className="col-md-6 offset-md-3">
-							<div className="search-bar form-inline">
-									<input
-										className="form-control"
-										type="text"
-										placeholder= "HAVE A QUESTION? SEARCH FOR ANSWERS..."/>
-									<button className="btn hidden-sm-down">
-										<span className="glyphicon glyphicon-search"></span>
-									</button>
-							</div>
-							</div>
-						</div>
-					</nav>
-					<div>
-						<Questions qaList = {qaList}/>
-					<button className = "more-questions">
-						MORE ANSWERED QUESTIONS
-					</button>
-					<button className = "add-question">
-					 ADD A QUESTION +
-					</button>
-					</div>
+				<Questions qaList = {qaList}/>
+				{count < localState.length &&
+				<button className = "more-questions" onClick = {() => setCount(count + 2)}>
+					MORE ANSWERED QUESTIONS
+				</button>}
+				<button className = "add-question">
+					ADD A QUESTION +
+				</button>
 				</div>
-			)
-		} else {
-			return null
-		}
+			</div>
+		)
+	} else {
+		return null
 	}
+}
 
-	export default QuestionsAnswers
+export default QuestionsAnswers
