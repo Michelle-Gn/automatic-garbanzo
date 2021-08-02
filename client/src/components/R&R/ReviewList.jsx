@@ -50,7 +50,14 @@ const ReviewList = (props) => {
 
   return (
     <div id='review-list'>
-      <button>ADD DROPDOWN MENU</button>
+      <div id='review-dropdown'>
+        <h6>{totalRatings.length} reviews, sorted by</h6>
+        <select onChange={(e) => setSortBy(e.target.value)}>
+          <option key='relevant' value='relevant'>relevance</option>
+          <option key='helpful' value='helpful'>helpful</option>
+          <option key='newest' value='newest'>newest</option>
+        </select>
+      </div>
       {Object.keys(reviews).map((review, i) => (
         <Review key={i} reviewData={review} />
       ))}
