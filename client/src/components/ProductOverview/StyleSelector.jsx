@@ -30,9 +30,10 @@ var StyleSelector = (props) => {
     )
   })
   return (
-    <Row className="justify-content-center">
-      {thumbs}
-    </Row>
+
+      <Row className="justify-content-center">
+        {thumbs}
+      </Row>
   )
 }
 

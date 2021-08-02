@@ -37,7 +37,12 @@ var AddToCart = (props) => {
 
 
   return (
-    <section id="addToCart">
+    <section
+      id="addToCart"
+      style={{
+        backgroundColor:"#4d8387",
+        padding: '1em',
+        borderRadius: '1em'}}>
       <div>{style.name} {product.category}</div>
       <div>{style.sale_price ? style.sale_price : style.original_price}</div>
       <div>{product.slogan}</div>
