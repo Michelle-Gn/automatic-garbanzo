@@ -8,8 +8,6 @@ import store from '../store';
 // Our Custom Modules
 import ProductOverview from './ProductOverview/ProductOverview.jsx';
 
-// store.dispatch({type: "ADD_TO_CART", payload: "My buns"}) // test store dispatch working
-
 var App = () => {
 
   useEffect(() => {
@@ -20,7 +18,7 @@ var App = () => {
   return (
     // Provider wraps Sub components to provide them access to the store
     <Provider store={store} >
-      <div className="AppContainer">
+      <div id="AppContainer" className="container-fluid">
         <ProductOverview />
         {/* <RatingsReviews /> */}
       </div>
