@@ -5,8 +5,7 @@ import config from '../../../../config.js';
 import RatingsBreakdown from './RatingsBreakdown.jsx';
 import ReviewList from './ReviewList.jsx';
 import ratingsActions from '../../actions/R&R/ratingsActions.js';
-import store from '../../store'
-import reviewListActions from '../../actions/R&R/reviewListActions.js';
+import store from '../../store';
 
 
 const ReviewsRatings = (props) => {
@@ -28,20 +27,6 @@ const ReviewsRatings = (props) => {
     }
   }, [product])
 
-  // REVIEW DATA
-  const getReviewData = (id, dispatch) => {
-    return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/?product_id=${id}`, { headers: {'Authorization': config} })
-      .then(result => dispatch(result.data))
-      .catch(err => console.log('getReviewData failed: ', err))
-  }
-
-  useEffect(() => {
-    if (product.id) {
-      getReviewData(product.id, (data) => {
-        store.dispatch(reviewListActions.changeReviewList(data));
-      })
-    }
-  }, [product])
   // ADD HANDLER FOR CHANGES IN PRODUCT ID
 
   return (
