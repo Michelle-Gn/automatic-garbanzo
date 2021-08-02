@@ -19,7 +19,8 @@ var QuestionsEntry = (props) => {
 
 		// slice answer list to get only 2 answers
 		const [count, setCount] = useState(2);
-	  let answerList = answers.slice(0, count);
+		let sortedAnswerList = answers.sort((a, b) => b.helpfulness - a.helpfulness);
+	  let answerList = sortedAnswerList.slice(0, count);
 
 		const [helpfulness, setHelpfulness] = useState(props.question.question_helpfulness)
 
@@ -38,6 +39,7 @@ var QuestionsEntry = (props) => {
 				<Helpful question = {props.question} />
 				<Button onClick = {()=> {toggleShow(dispatch, localState)}}>Add Answer</Button>
 			  <AnswerForm show = {localState} question_id = {props.question.question_id}/>
+				<div>A:</div>
 				<div>
 				{answerList.map((answer) => (
 					<Answer answer = {answer} key = {answer.answer_id}/>
