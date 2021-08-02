@@ -5,19 +5,19 @@ import QuestionsEntry from './QuestionsEntry.jsx';
 import getQuestions from '../../actions/Q&A/getQuestions.js';
 
 var Questions = (props) => {
-if (props.qaList.length !== 0){
-	return (
-		<div>
+	if (props.qaList.length !== 0){
+		return (
 			<div>
-				{props.qaList.map((question) => (
-          <QuestionsEntry question = {question} key = {question.question_id}/>
-				))}
+				<div>
+					{props.qaList.map((question) => (
+						<QuestionsEntry question = {question} key = {question.question_id}/>
+					))}
+				</div>
 			</div>
-		</div>
-	)
-} else {
-	return null;
-}
+		)
+	} else {
+		return null;
+	}
 }
 
 export default Questions
