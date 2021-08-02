@@ -5,6 +5,7 @@ import reviewsRatingsReducers from './R&R/reviewsRatingsReducers'
 import getNewProductReducer from './ProductOverview/getNewProductReducer'
 import getQuestionsReducer from './Q&A/questionsReducer'
 import getAnswersReducer from './Q&A/answersReducer'
+import modalReducer from './Q&A/modalReducer'
 
 export default combineReducers({
 
@@ -14,5 +15,6 @@ export default combineReducers({
   updateStyleReducer: updateStyleReducer,
   // Q&A Reducers
   questions: getQuestionsReducer,
-  answers: getAnswersReducer
+  answers: getAnswersReducer,
+  answerFormStatus: modalReducer
 })
