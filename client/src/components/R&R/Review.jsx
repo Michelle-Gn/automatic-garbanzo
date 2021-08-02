@@ -1,5 +1,6 @@
 import React from 'react';
-import StarRating from './StarRating.jsx'
+import StarRating from './StarRating.jsx';
+import Helpful from './Helpful.jsx';
 
 const Review = (props) => {
   const reviewData = props.reviewData
@@ -26,6 +27,7 @@ const Review = (props) => {
           <p>{reviewData.response}</p>
         </div>
       }
+      <Helpful helpfulness={reviewData.helpfulness} reviewId={reviewData['review_id']} />
     </div>
   )
 };
