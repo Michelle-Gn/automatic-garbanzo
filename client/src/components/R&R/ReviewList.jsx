@@ -23,7 +23,6 @@ const ReviewList = (props) => {
   useEffect(() => {
     if (product.id) {
       getReviewData(product.id, sortBy, totalRatings, (data) => {
-        console.log(data)
         store.dispatch(reviewListActions.changeReviewList(data));
         store.dispatch(reviewListActions.addVisibleReviews(data));
       })
@@ -58,7 +57,7 @@ const ReviewList = (props) => {
           <option key='newest' value='newest'>newest</option>
         </select>
       </div>
-      {Object.keys(reviews).map((review, i) => (
+      {Object.values(reviews).map((review, i) => (
         <Review key={i} reviewData={review} />
       ))}
       <button>ADD VISIBLE REVIEWS</button>
