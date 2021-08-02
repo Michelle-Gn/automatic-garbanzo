@@ -7,7 +7,7 @@ const Helpful = ({helpfulness, reviewId}) => {
   const [helpfulCount, setHelpfulCount] = useState(helpfulness);
 
   const handleHelpfulClick = () => {
-    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/${reviewId}/helpful`, { headers: {'Authorization': config} })
+    axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/${reviewId}/helpful`, {}, { headers: {'Authorization': config} })
       .then(() => setHelpfulCount(helpfulCount + 1))
       .catch(err => console.log(err, 'Helpful click failed'));
   }

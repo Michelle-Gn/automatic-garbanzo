@@ -1,18 +1,18 @@
 import React from 'react';
 import StarRating from './StarRating.jsx';
 import Helpful from './Helpful.jsx';
+import moment from 'moment';
 
 const Review = (props) => {
   const reviewData = props.reviewData
   const date = reviewData.date
-  const formattedDate = null // FIND HUMAN READABLE TIME CONVERTER
+  const formattedDate = moment(date).format('MMMM D, YYYY');
 
   return (
     <div id='review'>
       <StarRating id='stars' starCount={reviewData.rating} />
       <span id='user-date'>
-        <p id='username' key='username'>{reviewData['reviewer_name']}</p>
-        <p id='date' key='date'>{date}</p>
+        <p id='username-date' key='username-date'>{reviewData['reviewer_name']}, {formattedDate}</p>
       </span>
       <h3>{reviewData.summary}</h3>
       <p>{reviewData.body}</p>
