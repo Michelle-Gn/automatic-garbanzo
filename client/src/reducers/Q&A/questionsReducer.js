@@ -1,5 +1,4 @@
 import Redux from 'redux'
-import { productQuestions } from '../../../../sampleData'
 import * as actionTypes from '../../actions/actionTypes'
 
 const initialState = [];
