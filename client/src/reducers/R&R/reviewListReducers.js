@@ -19,7 +19,7 @@ const reviewListReducers = {
   addReviewsReducer: (state = initialState, action) => {
     switch(action.type) {
     case actionTypes.ADD_VISIBLE_REVIEWS:
-      return visibleReviews;
+      return action.visibleReviews;
     default:
       return state;
     }
