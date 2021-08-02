@@ -11,3 +11,4 @@ export const SET_TOTAL_RATINGS_AND_AVERAGE = 'SET_TOTAL_RATINGS_AND_AVERAGE';
 // Used in Question Answer
 export const GET_QUESTIONS = 'GET_QUESTIONS';
 export const GET_ANSWERS = 'GET_ANSWERS';
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
