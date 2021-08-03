@@ -29,10 +29,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-icons": "^4.2.0",
-=======
->>>>>>> 1c6581ea0e655e36112f2eb3efebbb56fda2a188
     "react-inner-image-zoom": "^2.0.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
