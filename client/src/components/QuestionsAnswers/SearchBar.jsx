@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const SearchBar = (props) => {
+
+  const [search, setSearch] = useState('');
 
   return (
   <div>
@@ -10,9 +12,13 @@ const SearchBar = (props) => {
         <div className="col-md-50 offset-md-3">
         <div className="search-bar form-inline">
             <input
+              onChange = {(e) => {
+                setSearch(e.target.value)
+              }}
               className="form-control"
               type="text"
-              placeholder= "HAVE A QUESTION? SEARCH FOR ANSWERS..."/>
+              placeholder= "HAVE A QUESTION? SEARCH FOR ANSWERS..."
+              value = {search}/>
             <button className="btn hidden-sm-down">
               <span className="glyphicon glyphicon-search"></span>
             </button>
