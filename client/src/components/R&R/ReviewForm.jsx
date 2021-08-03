@@ -46,12 +46,11 @@ const ReviewForm = (props) => {
               <Form.Check inline label='Yes' name='group1' type='radio' id='recommend-1' />
               <Form.Check inline label='No' name='group1' type='radio' id='recommend-2' />
             </div>
-            <div>****can't get characteristics to render</div>
-            <Form.Control as='select'>
+            <div>
               {Object.keys(characteristics).map((char, i) => {
-                <CharacteristicRating char={char} key={i} />
+                return <CharacteristicRating char={char} key={'char-' + i}/>
               })}
-            </Form.Control>
+            </div>
             <Form.Group>
               <Form.Label>Review Summary</Form.Label>
               <Form.Control as='textarea' rows={1} placeholder='Example: Best purchase ever!' />
