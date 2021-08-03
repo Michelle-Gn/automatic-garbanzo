@@ -537,3 +537,213 @@ export const productReviewsMeta = {
       }
   }
 }
+
+//Get /qa/questions?product_id=16058
+export const productQuestions = {
+    "product_id": "16058",
+    "results": [
+        {
+            "question_id": 95017,
+            "question_body": "Where does this product ship from?",
+            "question_date": "2017-11-04T00:00:00.000Z",
+            "asker_name": "toofast",
+            "question_helpfulness": 24,
+            "reported": false,
+            "answers": {
+                "901152": {
+                    "id": 901152,
+                    "body": "It ships from the facility in Tulsa",
+                    "date": "2017-11-04T00:00:00.000Z",
+                    "answerer_name": "toofast",
+                    "helpfulness": 25,
+                    "photos": []
+                },
+                "1991663": {
+                    "id": 1991663,
+                    "body": "Ships from San Francisco",
+                    "date": "2021-06-15T00:00:00.000Z",
+                    "answerer_name": "raerae",
+                    "helpfulness": 0,
+                    "photos": []
+                },
+                "1991683": {
+                    "id": 1991683,
+                    "body": "Ships from China",
+                    "date": "2021-06-15T00:00:00.000Z",
+                    "answerer_name": "qwerty",
+                    "helpfulness": 0,
+                    "photos": [
+                        "blob:http://localhost:3001/b1ad2328-6ba0-4a1a-b880-0b6fff92aef4",
+                        "blob:http://localhost:3001/312fc4d1-2169-4b5a-8b26-e773681d9ce8"
+                    ]
+                },
+                "1991970": {
+                    "id": 1991970,
+                    "body": "Ships from Texas.",
+                    "date": "2021-06-18T00:00:00.000Z",
+                    "answerer_name": "raerae",
+                    "helpfulness": 2,
+                    "photos": []
+                },
+                "1991971": {
+                    "id": 1991971,
+                    "body": "Ragnarok",
+                    "date": "2021-06-18T00:00:00.000Z",
+                    "answerer_name": "Loki",
+                    "helpfulness": 0,
+                    "photos": [
+                        "blob:http://localhost:3001/636a5124-e710-424f-9ab5-47903a51c404"
+                    ]
+                },
+                "1992047": {
+                    "id": 1992047,
+                    "body": "some answer",
+                    "date": "2021-06-18T00:00:00.000Z",
+                    "answerer_name": "rae",
+                    "helpfulness": 0,
+                    "photos": [
+                        "blob:http://localhost:3001/f90e8268-4118-4525-b273-539e37bbcf3e"
+                    ]
+                }
+            }
+        },
+        {
+            "question_id": 95010,
+            "question_body": "Does this product run big or small?",
+            "question_date": "2018-11-12T00:00:00.000Z",
+            "asker_name": "coolkid",
+            "question_helpfulness": 12,
+            "reported": false,
+            "answers": {
+                "901097": {
+                    "id": 901097,
+                    "body": "Runs small, I'd say",
+                    "date": "2018-01-12T00:00:00.000Z",
+                    "answerer_name": "warmkid",
+                    "helpfulness": 12,
+                    "photos": []
+                },
+                "1991664": {
+                    "id": 1991664,
+                    "body": "Product runs true to size.",
+                    "date": "2021-06-15T00:00:00.000Z",
+                    "answerer_name": "raerae",
+                    "helpfulness": 0,
+                    "photos": []
+                }
+            }
+        },
+        {
+            "question_id": 95023,
+            "question_body": "Why is this product cheaper here than other sites?",
+            "question_date": "2018-07-28T00:00:00.000Z",
+            "asker_name": "l33tgamer",
+            "question_helpfulness": 7,
+            "reported": false,
+            "answers": {
+                "901183": {
+                    "id": 901183,
+                    "body": "I can't find it cheaper anywhere else?",
+                    "date": "2018-09-28T00:00:00.000Z",
+                    "answerer_name": "n00bgamer",
+                    "helpfulness": 8,
+                    "photos": []
+                },
+                "901184": {
+                    "id": 901184,
+                    "body": "The other sites are marking it up!",
+                    "date": "2018-09-28T00:00:00.000Z",
+                    "answerer_name": "Seller",
+                    "helpfulness": 11,
+                    "photos": []
+                }
+            }
+        },
+        {
+            "question_id": 95012,
+            "question_body": "Why is this product cheaper here than other sites?",
+            "question_date": "2018-11-28T00:00:00.000Z",
+            "asker_name": "jbilas",
+            "question_helpfulness": 6,
+            "reported": false,
+            "answers": {
+                "1719790": {
+                    "id": 1719790,
+                    "body": "Because this website has the best prices!",
+                    "date": "2021-04-28T00:00:00.000Z",
+                    "answerer_name": "notanemployee",
+                    "helpfulness": 1,
+                    "photos": []
+                },
+                "1991665": {
+                    "id": 1991665,
+                    "body": "Because it just does.",
+                    "date": "2021-06-15T00:00:00.000Z",
+                    "answerer_name": "jackson",
+                    "helpfulness": 0,
+                    "photos": []
+                }
+            }
+        }
+    ]
+}
+
+
+//Get /qa/questions/95017/answers
+export const productAnswer = {
+    "question": "95017",
+    "page": 1,
+    "count": 5,
+    "results": [
+        {
+            "answer_id": 901152,
+            "body": "It ships from the facility in Tulsa",
+            "date": "2017-11-04T00:00:00.000Z",
+            "answerer_name": "toofast",
+            "helpfulness": 25,
+            "photos": []
+        },
+        {
+            "answer_id": 1991970,
+            "body": "Ships from Texas.",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "raerae",
+            "helpfulness": 2,
+            "photos": []
+        },
+        {
+            "answer_id": 1991971,
+            "body": "Ragnarok",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "Loki",
+            "helpfulness": 0,
+            "photos": [
+                {
+                    "id": 1752385,
+                    "url": "blob:http://localhost:3001/636a5124-e710-424f-9ab5-47903a51c404"
+                }
+            ]
+        },
+        {
+            "answer_id": 1991663,
+            "body": "Ships from San Francisco",
+            "date": "2021-06-15T00:00:00.000Z",
+            "answerer_name": "raerae",
+            "helpfulness": 0,
+            "photos": []
+        },
+        {
+            "answer_id": 1992047,
+            "body": "some answer",
+            "date": "2021-06-18T00:00:00.000Z",
+            "answerer_name": "rae",
+            "helpfulness": 0,
+            "photos": [
+                {
+                    "id": 1752407,
+                    "url": "blob:http://localhost:3001/f90e8268-4118-4525-b273-539e37bbcf3e"
+                }
+            ]
+        }
+    ]
+}

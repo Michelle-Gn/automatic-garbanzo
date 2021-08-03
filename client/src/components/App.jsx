@@ -8,8 +8,7 @@ import store from '../store';
 // Our Custom Modules
 import ProductOverview from './ProductOverview/ProductOverview.jsx';
 import RatingsReviews from './R&R/RatingsReviews.jsx';
-
-// store.dispatch({type: "ADD_TO_CART", payload: "My buns"}) // test store dispatch working
+import QuestionsAnswers from './QuestionsAnswers/QuestionsAnswers.jsx';
 
 var App = () => {
 
@@ -21,8 +20,9 @@ var App = () => {
   return (
     // Provider wraps Sub components to provide them access to the store
     <Provider store={store} >
-      <div className="AppContainer">
+      <div id="AppContainer" className="container-fluid">
         <ProductOverview />
+        <QuestionsAnswers/>
         <RatingsReviews />
       </div>
     </Provider>

@@ -1,8 +1,13 @@
 import React, {useState, useEffect } from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import { addToCart } from '../../actions/ProductOverview/actions.js';
 
 var AddToCart = (props) => {
   const skus = useSelector(state => state.updateStyleReducer.selectedStyle.skus)
+  const style = useSelector(state => state.updateStyleReducer.selectedStyle)
+  const product = useSelector(state => state.getNewProductReducer.selectedProduct)
+
+  const dispatch = useDispatch();
 
   const [sizeSelect, setSize] = useState("Size");
   const [qtysList, makeQtyList] = useState([]);
@@ -15,7 +20,6 @@ var AddToCart = (props) => {
         {skus[sku].size}
     </option>
   );
-
 
   useEffect(() => {
     let qtys = [];
@@ -33,16 +37,26 @@ var AddToCart = (props) => {
 
 
   return (
-    <section id="addToCart">
+    <section
+      id="addToCart"
+      style={{
+        backgroundColor:"#4d8387",
+        padding: '1em',
+        borderRadius: '1em'}}>
+      <div>{style.name} {product.category}</div>
+      <div>{style.sale_price ? style.sale_price : style.original_price}</div>
+      <div>{product.slogan}</div>
+      <div> {product.description}</div>
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          console.log(`SKU: ${sizeSelect} with Quantity: ${qtySelect} added to Cart!` )
+          dispatch(addToCart(sizeSelect, qtySelect));
         } }>
-      <select onChange={(e) => {
-        e.preventDefault()
-        setSize(e.target.value)
-        }}
+      <select
+        onChange={(e) => {
+          e.preventDefault()
+          setSize(e.target.value)
+          }}
       name="sizeSelect">
         {skusElems}
       </select>
@@ -55,7 +69,7 @@ var AddToCart = (props) => {
           required>
         {qtysList.slice(0,15)}
       </select>
-      <button type="submit" className="btn-md">Add to Cart</button>
+      <button type="submit">Add to Cart</button>
       </form>
     </section>
   )

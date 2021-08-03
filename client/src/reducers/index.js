@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import updateStyleReducer from './StyleSelector/styleReducer';
 import addToCartReducer from './AddtoCart/cartReducer';
 import getNewProductReducer from './ProductOverview/getNewProductReducer';
-
+import getQuestionsReducer from './Q&A/questionsReducer';
+import getAnswersReducer from './Q&A/answersReducer';
+import modalReducer from './Q&A/modalReducer';
 import ratingsReducers from './R&R/ratingsReducers.js';
 import reviewListReducers from './R&R/reviewListReducers.js';
 
@@ -17,4 +19,8 @@ export default combineReducers({
   ratingsMeta: ratingsReducers.ratingsReducer,
   totalRatings: ratingsReducers.totalRatingsReducer,
   starAverage: ratingsReducers.starAverageReducer,
+  // Q&A Reducers
+  questions: getQuestionsReducer,
+  answers: getAnswersReducer,
+  answerFormStatus: modalReducer
 })
