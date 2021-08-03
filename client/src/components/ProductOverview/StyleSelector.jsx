@@ -14,9 +14,8 @@ var StyleSelector = (props) => {
   const thumbs = styles.map(style => {
     let thumb = style.photos[0].thumbnail_url
     return (
-      <Col sm={1}>
+      <Col sm={1} key={style.style_id}>
         <Image
-          key={style.style_id}
           name={style.style_id}
           src={thumb}
           alt="aThumb"
