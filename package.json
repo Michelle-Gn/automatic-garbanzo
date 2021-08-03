@@ -4,7 +4,7 @@
   "description": "This repo is for collaboration on our FEC project associated with HRLAX45.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --collect-coverage",
     "start": "nodemon ./server/index.js",
     "build": "webpack --config ./webpack.config.js -w"
   },
@@ -22,7 +22,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-    "bootstrap": "^5.0.2",
     "eslint": "^7.31.0",
     "express": "^4.17.1",
     "moment": "^2.29.1",
@@ -30,10 +29,14 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-icons": "^4.2.0",
+=======
+>>>>>>> 1c6581ea0e655e36112f2eb3efebbb56fda2a188
     "react-inner-image-zoom": "^2.0.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
@@ -42,9 +45,17 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
     "@babel/preset-react": "^7.14.5",
+    "@testing-library/dom": "^8.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
+    "jest": "^27.0.6",
+    "msw": "^0.33.2",
+    "react-test-renderer": "^17.0.2",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"
   }
