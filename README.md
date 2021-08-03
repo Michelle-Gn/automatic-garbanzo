@@ -5,8 +5,10 @@ This repo is for collaboration on our FEC project associated with HRLAX45.
 
 
 ## Technologies Used:
-  * React
-  * TBD Styling Library
+  * Frontend via React with Hooks and Redux
+  * Backend via express.js and heroku API
+  * Styling via React-Bootsrap
+  * Testing via Jest and React-Testing-Library
   * TBD Deployment Platform (currently only local development)
 
 -----
