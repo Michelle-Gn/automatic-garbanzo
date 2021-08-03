@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 // Product Overview Action Creators // Maybe combine these like Ratings and Reviews Actions?
 
 // Sync action creator. Used in thunk below or can be dispatched directly to update your product
-const updateNewProduct = (resObjData) => {
+export const updateNewProduct = (resObjData) => {
   return {
     type: actionTypes.GET_NEW_PRODUCT,
     payload: resObjData
