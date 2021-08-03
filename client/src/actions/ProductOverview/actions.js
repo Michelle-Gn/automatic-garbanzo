@@ -1,7 +1,7 @@
 import * as actionTypes from '../actionTypes'
 import API_KEY from '../../../../config'
 import axios from 'axios'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 // Product Overview Action Creators // Maybe combine these like Ratings and Reviews Actions?
 
@@ -60,13 +60,13 @@ export const getNewStyles = (selectedProductId) => {
 }
 
 
-export const addToCart = (SKU, QTY, SIZE) => {
+export const addToCart = (SKU, QTY) => {
+  console.log(actionTypes.ADD_TO_CART, "is the action type")
   return {
     type: actionTypes.ADD_TO_CART,
     payload: {
       SKU: SKU,
       QTY: QTY,
-      SIZE: SIZE
     }
   }
 };

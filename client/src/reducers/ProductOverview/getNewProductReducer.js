@@ -11,6 +11,7 @@ const getNewProductReducer = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.GET_NEW_PRODUCT:
       return {
+        ...state,
         selectedProduct: action.payload
       };
     default:
