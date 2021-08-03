@@ -13,21 +13,22 @@ const QuestionsAnswers = (props) => {
 	const localState = useSelector(((globalState) => globalState.questions));
 	const sortedLocalState = localState.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
 
-	const [count, setCount] = useState(4);
-	let qaList = sortedLocalState.slice(0, count);
-
 	const [search, setSearch] = useState('');
-	if (search.length > 3) {
-		let filteredList = sortedLocalState.filter(sortedLocalState.question_body.includes(search))
+	const [count, setCount] = useState(4);
+
+	if (search.length >= 3) {
+		var qaList = sortedLocalState.filter(question => (question.question_body.includes(search)))
+	} else {
+		qaList = sortedLocalState.slice(0, count);
 	}
 
-	if (qaList.length !== 0) {
+	if (localState.length !== 0) {
 		return (
 			<div>
 				<SearchBar searchField = {search} setSearch = {setSearch}/>
 				<div>
 				<Questions qaList = {qaList}/>
-				{count < localState.length &&
+				{(count < localState.length && search.length < 3) &&
 				<button className = "more-questions" onClick = {() => setCount(count + 2)}>
 					MORE ANSWERED QUESTIONS
 				</button>}
