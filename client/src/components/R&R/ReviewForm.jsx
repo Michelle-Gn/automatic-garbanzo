@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, Modal, Form } from 'react-bootstrap';
 import StarRating from './SubmitStarRating.jsx';
+import CharacteristicRating from './CharacteristicRating.jsx'
 
 const ReviewForm = (props) => {
   const [show, setShow] = useState(false);
@@ -45,7 +46,12 @@ const ReviewForm = (props) => {
               <Form.Check inline label='Yes' name='group1' type='radio' id='recommend-1' />
               <Form.Check inline label='No' name='group1' type='radio' id='recommend-2' />
             </div>
-            <div>ADD CHARACTERISTICS (new component)</div>
+            <div>****can't get characteristics to render</div>
+            <Form.Control as='select'>
+              {Object.keys(characteristics).map((char, i) => {
+                <CharacteristicRating char={char} key={i} />
+              })}
+            </Form.Control>
             <Form.Group>
               <Form.Label>Review Summary</Form.Label>
               <Form.Control as='textarea' rows={1} placeholder='Example: Best purchase ever!' />
