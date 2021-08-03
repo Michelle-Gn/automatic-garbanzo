@@ -22,6 +22,7 @@ const ReviewForm = (props) => {
         onHide={handleClose}
         backdrop='static'
         keyboard={false}
+        fullscreen={true}
       >
         <Modal.Header closeButton>
           <Modal.Title>
