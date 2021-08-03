@@ -24,8 +24,6 @@ var QuestionsEntry = (props) => {
 
 		const [helpfulness, setHelpfulness] = useState(props.question.question_helpfulness)
 
-		// sort answer list
-
 	  // create variable and set it equal to global piece of state for shown
 		const dispatch = useDispatch();
 		useEffect(() => {toggleShow(dispatch, true)}, []);
@@ -45,6 +43,8 @@ var QuestionsEntry = (props) => {
 					<Answer answer = {answer} key = {answer.answer_id}/>
 				))}
 				</div>
+				{count < answers.length &&
+				<span className = "more-answers" onClick = {()=> setCount(answers.length)}>See More Answers</span>}
 			</div>
 			)
 		} else {
