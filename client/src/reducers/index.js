@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import updateStyleReducer from './StyleSelector/styleReducer'
 import addToCartReducer from './AddtoCart/cartReducer'
-import reviewsRatingsReducers from './R&R/reviewsRatingsReducers'
 import getNewProductReducer from './ProductOverview/getNewProductReducer'
 import getQuestionsReducer from './Q&A/questionsReducer'
 import getAnswersReducer from './Q&A/answersReducer'
@@ -15,7 +14,7 @@ export default combineReducers({
   getNewProductReducer: getNewProductReducer,
   addToCartReducer: addToCartReducer,
   updateStyleReducer: updateStyleReducer,
-  
+
   // Ratings and Review Reducers
   reviews: reviewListReducers.reviewListReducer,
   visibleReviews: reviewListReducers.addReviewsReducer,
