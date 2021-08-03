@@ -62,6 +62,7 @@ const ReviewList = (props) => {
       ))}
       <button>ADD VISIBLE REVIEWS</button>
       <button>ADD NEW REVIEW (ReviewForm component)</button>
+      <ReviewForm />
     </div>
   )
 };
