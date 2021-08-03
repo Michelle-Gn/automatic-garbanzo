@@ -59,18 +59,3 @@ const [answer, setAnswer] = useState('');
 }
 
 export default AnswerForm
-
-
-
-
-{/* <Modal show = {props.localState}>
-    <Modal.Header>Modal Head Part</Modal.Header>
-    <Modal.Body>
-      Hi, React modal is here
-    </Modal.Body>
-    <Modal.Footer>
-      <Button onClick = {()=> {toggleShow(dispatch, props.localState)}}>
-        Close Modal
-      </Button>
-      </Modal.Footer>
-    </Modal> */}

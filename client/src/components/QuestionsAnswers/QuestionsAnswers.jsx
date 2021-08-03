@@ -7,7 +7,6 @@ import getQuestions from '../../actions/Q&A/getQuestions.js';
 const QuestionsAnswers = (props) => {
 
   const product = useSelector(state => state.getNewProductReducer.selectedProduct)
-	console.log('product_id', product.id)
 
 	const dispatch = useDispatch();
 	useEffect(() => {getQuestions(dispatch, product.id, 1, 1000)}, [product]);

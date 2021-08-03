@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import moment from 'moment';
 import AnswerHelpful from './AnswerHelpful.jsx';
 
-
-// one answer entry
-  // format here
 var Answer = (props) => {
   return (
   <div>
@@ -14,8 +11,5 @@ var Answer = (props) => {
   </div>
   )
 }
-
-// child component: helpfulness
-   // create local state to see helpfulness incremented
 
 export default Answer
