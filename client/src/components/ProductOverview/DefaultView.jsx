@@ -12,11 +12,10 @@ const DefaultView = ({photos, style, setView}) => {
   }, [style])
 
   const thumbs = photos.map( photo =>
-    <Col xs={'3'} className="align-content-center">
+    <Col xs={'3'} className="align-content-center" key={photo.url}>
       <Image
         className="img-thumbnail"
         src={photo.thumbnail_url}
-        key={photo.url}
         name={photo.url}
         style={{height: '10vh'}}
         onClick={(e) => { setThumb(e.target.name) }}

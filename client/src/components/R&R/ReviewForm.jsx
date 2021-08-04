@@ -52,6 +52,11 @@ const ReviewForm = (props) => {
                 return <CharacteristicRating char={char} key={'char-' + i}/>
               })}
             </div>
+            <Form.Control as='select'>
+              {Object.keys(characteristics).map((char, i) => {
+                <CharacteristicRating char={char} key={i} />
+              })}
+            </Form.Control>
             <Form.Group>
               <Form.Label>Review Summary</Form.Label>
               <Form.Control as='textarea' rows={1} placeholder='Example: Best purchase ever!' />
