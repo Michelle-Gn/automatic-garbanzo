@@ -3,7 +3,6 @@ import * as actionTypes from '../../actions/actionTypes'
 
 const initialState = {
   reviews: [],
-  visibleReviews: []
 };
 
 const reviewListReducers = {
@@ -15,15 +14,6 @@ const reviewListReducers = {
       return state;
     }
   },
-
-  addReviewsReducer: (state = initialState, action) => {
-    switch(action.type) {
-    case actionTypes.ADD_VISIBLE_REVIEWS:
-      return action.visibleReviews;
-    default:
-      return state;
-    }
-  }
 };
 
 export default reviewListReducers;
