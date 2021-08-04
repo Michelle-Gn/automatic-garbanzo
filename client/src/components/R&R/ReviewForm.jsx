@@ -22,6 +22,7 @@ const ReviewForm = (props) => {
         onHide={handleClose}
         backdrop='static'
         keyboard={false}
+        fullscreen={true}
       >
         <Modal.Header closeButton>
           <Modal.Title>
@@ -46,7 +47,11 @@ const ReviewForm = (props) => {
               <Form.Check inline label='Yes' name='group1' type='radio' id='recommend-1' />
               <Form.Check inline label='No' name='group1' type='radio' id='recommend-2' />
             </div>
-            <div>****can't get characteristics to render</div>
+            <div>
+              {Object.keys(characteristics).map((char, i) => {
+                return <CharacteristicRating char={char} key={'char-' + i}/>
+              })}
+            </div>
             <Form.Control as='select'>
               {Object.keys(characteristics).map((char, i) => {
                 <CharacteristicRating char={char} key={i} />

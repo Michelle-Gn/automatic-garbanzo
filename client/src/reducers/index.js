@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import updateStyleReducer from './StyleSelector/styleReducer'
 import addToCartReducer from './AddtoCart/cartReducer'
 import getNewProductReducer from './ProductOverview/getNewProductReducer'
