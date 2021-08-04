@@ -7,12 +7,12 @@ import getQuestions from '../../actions/Q&A/getQuestions.js';
 var Questions = (props) => {
 	if (props.qaList.length !== 0){
 		return (
-			<div>
-				<div>
-					{props.qaList.map((question) => (
-						<QuestionsEntry question = {question} key = {question.question_id}/>
-					))}
-				</div>
+			<div className = 'questions'>
+				{props.qaList.map((question) => (
+					<QuestionsEntry question = {question}
+					key = {question.question_id}
+					product = {props.product}/>
+				))}
 			</div>
 		)
 	} else {
