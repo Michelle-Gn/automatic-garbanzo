@@ -43,8 +43,10 @@ var QuestionsEntry = (props) => {
 					<Answer answer = {answer} key = {answer.answer_id}/>
 				))}
 				</div>
-				{count < answers.length &&
+				{(count < answers.length) &&
 				<span className = "more-answers" onClick = {()=> setCount(answers.length)}>See More Answers</span>}
+				{(count > 2 && count === answers.length) &&
+				<span className = "collapse-answers" onClick = {() => setCount(2)}>Collapse answers</span>}
 			</div>
 			)
 		} else {
