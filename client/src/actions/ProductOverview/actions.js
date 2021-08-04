@@ -15,7 +15,7 @@ const updateNewProduct = (resObjData) => {
 // Thunk get new product request that calls updateNewProduct on success.
 export const getNewProduct = (selectedProductId) => {
   return  (dispatch) => {
-    const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/products/16069'//+ selectedProductId
+    const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/products/' + selectedProductId
     const options = {
       headers: {
         'Authorization': API_KEY
