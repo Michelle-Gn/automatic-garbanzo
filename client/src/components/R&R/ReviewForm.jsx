@@ -14,9 +14,9 @@ const ReviewForm = (props) => {
 
   return (
     <div>
-      <Button variant='primary' onClick={handleShow}>
+      <button variant='primary' onClick={handleShow}>
         ADD A REVIEW&#160;&#160;&#160;&#160;&#160;+
-      </Button>
+      </button>
       <Modal
         show={show}
         onHide={handleClose}

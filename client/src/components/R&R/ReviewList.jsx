@@ -11,8 +11,9 @@ const ReviewList = (props) => {
   const reviews = useSelector(state => state.reviews.results) || {}
   const product = useSelector(state => state.getNewProductReducer.selectedProduct)
   const totalRatings = useSelector(state => state.totalRatings) || 5
-  const visibleReviews = useSelector(state => state.visibleReviews.results)
-  const [sortBy, setSortBy] = useState('relevant')
+
+  const [sortBy, setSortBy] = useState('relevant');
+  const [reviewCount, setReviewCount] = useState(2);
 
   const getReviewData = (id, sortBy, count, dispatch) => {
     return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/?product_id=${id}&count=${count}&sort=${sortBy}`, { headers: {'Authorization': config} })
@@ -24,28 +25,13 @@ const ReviewList = (props) => {
     if (product.id) {
       getReviewData(product.id, sortBy, totalRatings, (data) => {
         store.dispatch(reviewListActions.changeReviewList(data));
-        store.dispatch(reviewListActions.addVisibleReviews(data));
       })
     }
   }, [product, sortBy, totalRatings])
 
-  // const handleMoreClick = (post) => {
-  //   let display = totalRatings
-  //   if (post) {
-  //     console.log('handling more click');
-  //     display++;
-  //   }
-  //   if (post || reviews.length <= totalRatings) {
-  //     getReviewData(product.id, sortBy, display, reviewListActions.changeReviewList, () => {});
-  //   }
-
-  //   const currentPosition = Math.max(visibleReviews.length || 0);
-  //   const reviewsToAdd = visibleReviews.concat(reviews.slice(
-  //     currentPosition,
-  //     currentPosition + 2
-  //   ));
-  //   reviewListActions.addVisibleReviews(reviewsToAdd);
-  // }
+  const handleClick = () => {
+    setReviewCount(reviewCount + 2)
+  }
 
   return (
     <div id='review-list'>
@@ -57,11 +43,10 @@ const ReviewList = (props) => {
           <option key='newest' value='newest'>newest</option>
         </select>
       </div>
-      {Object.values(reviews).map((review, i) => (
+      {Object.values(reviews).slice(0, reviewCount).map((review, i) => (
         <Review key={i} reviewData={review} />
       ))}
-      <button>ADD VISIBLE REVIEWS</button>
-      <button>ADD NEW REVIEW (ReviewForm component)</button>
+      <button onClick={handleClick}>ADD MORE REVIEWS</button>
       <ReviewForm />
     </div>
   )

@@ -18,7 +18,6 @@ export default combineReducers({
 
   // Ratings and Review Reducers
   reviews: reviewListReducers.reviewListReducer,
-  visibleReviews: reviewListReducers.addReviewsReducer,
   ratingsMeta: ratingsReducers.ratingsReducer,
   totalRatings: ratingsReducers.totalRatingsReducer,
   starAverage: ratingsReducers.starAverageReducer,
