@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import Questions from './Questions.jsx';
 import SearchBar from './SearchBar.jsx';
+import QuestionForm from './QuestionForm.jsx';
 import getQuestions from '../../actions/Q&A/getQuestions.js';
+import toggleShow from '../../actions/Q&A/toggleShow.js';
 
 const QuestionsAnswers = (props) => {
 
@@ -11,6 +14,7 @@ const QuestionsAnswers = (props) => {
 	const dispatch = useDispatch();
 	useEffect(() => {getQuestions(dispatch, product.id, 1, 1000)}, [product]);
 	const localState = useSelector(((globalState) => globalState.questions));
+	const shownState = useSelector(((globalState) => globalState.answerFormStatus));
 	const sortedLocalState = localState.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
 
 	const [search, setSearch] = useState('');
@@ -32,9 +36,10 @@ const QuestionsAnswers = (props) => {
 				<button className = "more-questions" onClick = {() => setCount(count + 2)}>
 					MORE ANSWERED QUESTIONS
 				</button>}
-				<button className = "add-question">
+				<Button className = "add-question" onClick = {()=> {toggleShow(dispatch, shownState)}}>
 					ADD A QUESTION +
-				</button>
+				</Button>
+				<QuestionForm product = {product.id} show = {shownState}/>
 				</div>
 			</div>
 		)

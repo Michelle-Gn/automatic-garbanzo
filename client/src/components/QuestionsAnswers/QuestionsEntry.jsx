@@ -52,4 +52,4 @@ var QuestionsEntry = (props) => {
 		}
 }
 
-	export default QuestionsEntry
+export default QuestionsEntry
