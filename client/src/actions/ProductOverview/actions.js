@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 // Product Overview Action Creators // Maybe combine these like Ratings and Reviews Actions?
 
 // Sync action creator. Used in thunk below or can be dispatched directly to update your product
-const updateNewProduct = (resObjData) => {
+export const updateNewProduct = (resObjData) => {
   return {
     type: actionTypes.GET_NEW_PRODUCT,
     payload: resObjData
@@ -15,7 +15,7 @@ const updateNewProduct = (resObjData) => {
 // Thunk get new product request that calls updateNewProduct on success.
 export const getNewProduct = (selectedProductId) => {
   return  (dispatch) => {
-    const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/products/'+ selectedProductId
+    const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/products/' + selectedProductId
     const options = {
       headers: {
         'Authorization': API_KEY

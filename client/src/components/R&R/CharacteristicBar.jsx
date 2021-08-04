@@ -17,20 +17,20 @@ const CharacteristicBar = ({characteristic, charRating}) => {
     highKey = 'Too wide';
   case 'Comfort':
     lowKey = 'Poor';
-    midKey = '';
+    midKey = 'Average';
     highKey = 'Perfect';
   case 'Quality':
     lowKey = 'Poor';
-    midKey = '';
+    midKey = 'Average';
     highKey = 'Perfect';
   case 'Length':
     lowKey = 'Runs short';
     midKey = 'Perfect';
     highKey = 'Runs long';
   case 'Fit':
-    lowKey = 'Too tight';
+    lowKey = 'Runs tight';
     midKey = 'Perfect';
-    highKey = 'Too big';
+    highKey = 'Runs big';
   }
 
   return (

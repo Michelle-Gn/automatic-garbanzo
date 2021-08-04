@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import updateStyleReducer from './StyleSelector/styleReducer'
 import addToCartReducer from './AddtoCart/cartReducer'
 import getNewProductReducer from './ProductOverview/getNewProductReducer'
@@ -18,7 +19,6 @@ export default combineReducers({
 
   // Ratings and Review Reducers
   reviews: reviewListReducers.reviewListReducer,
-  visibleReviews: reviewListReducers.addReviewsReducer,
   ratingsMeta: ratingsReducers.ratingsReducer,
   totalRatings: ratingsReducers.totalRatingsReducer,
   starAverage: ratingsReducers.starAverageReducer,
