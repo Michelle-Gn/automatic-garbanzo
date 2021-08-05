@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, Modal, Form } from 'react-bootstrap';
 import StarRating from './SubmitStarRating.jsx';
 import CharacteristicRating from './CharacteristicRating.jsx';
-
+import axios from 'axios';
+import config from '../../../../config.js';
 
 const ReviewForm = (props) => {
   const [show, setShow] = useState(false);
@@ -11,6 +12,7 @@ const ReviewForm = (props) => {
   const [charsToSend, setCharsToSend] = useState({});
   const [errors, setErrors] = useState({});
 
+  const productId = useSelector(state => state.getNewProductReducer.selectedProduct.id);
   const name = useSelector(state => state.getNewProductReducer.selectedProduct.name);
   const characteristics = useSelector(state => state.ratingsMeta.characteristics) || {};
 
@@ -27,14 +29,21 @@ const ReviewForm = (props) => {
     setCharsToSend({
       ...charsToSend,
       [charId]: val
-    });
+    },)
+
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    setField('characteristics', charsToSend);
+  }, [charsToSend])
 
-
+  const handleSubmit = (formData) => {
+    setField('product_id', productId);
+    axios.post(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/`, formData, { headers: {'Authorization': config} })
+      .then(result => console.log('Submitted review'))
+      .catch(err => console.log('Failed to submit review: ', err))
   }
+
 
   return (
     <div>
@@ -59,7 +68,7 @@ const ReviewForm = (props) => {
             <StarRating setField={setField} />
             <Form.Group>
               <Form.Label>Nickname</Form.Label>
-              <Form.Control type='name' placeholder='jackson11!' onChange={(e) => setField('reviewer_name', e.target.value)}/>
+              <Form.Control type='name' placeholder='jackson11!' onChange={(e) => setField('name', e.target.value)}/>
               <Form.Text>For privacy reasons, do not use your full name or email address</Form.Text>
             </Form.Group>
             <Form.Group>
@@ -90,12 +99,12 @@ const ReviewForm = (props) => {
             </Form.Group>
             <Form.Group controlId='formFileMultiple'>
               <Form.Label>Upload product images</Form.Label>
-              <Form.Control type='file' multiple />
+              <Form.Control type='file' multiple onChange={(e) => setField('photos', [])}/>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant='primary' onClick={(e) => setField('characteristics', charsToSend)}>Submit Review</Button>
+          <Button variant='primary' onClick={() => handleSubmit(form)}>Submit Review</Button>
         </Modal.Footer>
       </Modal>
     </div>
