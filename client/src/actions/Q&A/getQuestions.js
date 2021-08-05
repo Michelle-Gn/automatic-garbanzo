@@ -9,6 +9,7 @@ export default (dispatch, product_id, page, count) => {
   }
   axios.get(url, options)
   .then(res => {
+    console.log('response',res)
     dispatch({
       type: actionTypes.GET_QUESTIONS,
       payload: res.data.results

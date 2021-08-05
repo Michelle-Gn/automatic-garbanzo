@@ -12,7 +12,11 @@ const QuestionsAnswers = (props) => {
   const product = useSelector(state => state.getNewProductReducer.selectedProduct)
 
 	const dispatch = useDispatch();
-	useEffect(() => {getQuestions(dispatch, product.id, 1, 1000)}, [product]);
+
+	useEffect(() => {if (product.id) {
+		console.log('product:', product)
+		getQuestions(dispatch, product.id, 1, 1000)
+	}}, [product]);
 	const localState = useSelector(((globalState) => globalState.questions));
 	useEffect(() => {toggleShowQuestion(dispatch, true)}, []);
 	const shownState = useSelector(((globalState) => globalState.questionFormStatus));
