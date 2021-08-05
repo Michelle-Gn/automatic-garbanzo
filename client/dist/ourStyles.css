@@ -160,3 +160,36 @@ html {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+/* Questions Answers CSS */
+
+.questions {
+  max-height: 300px;
+  overflow-y: auto
+}
+
+.QA-container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  margin: auto;
+}
+
+.question-buttons {
+  margin: 2px;
+  flex: 1;
+  min-width: 80px;
+}
+
+.search-bar {
+  width: 1000px;
+  margin: auto;
+}
+
+.question-half {
+  margin: 10px;
+}
+
+.answer-half {
+  margin: 20px;
+}

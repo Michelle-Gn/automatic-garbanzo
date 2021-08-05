@@ -33,18 +33,31 @@ var QuestionsEntry = (props) => {
 		if (answerList.length !== 0) {
 			return (
 			<div>
-				<div> {'Q: ' + props.question.question_body} </div>
-				<Helpful question = {props.question} />
-				<Button onClick = {()=> {toggleShow(dispatch, localState)}}>Add Answer</Button>
-			  <AnswerForm show = {localState} question_id = {props.question.question_id}/>
-				<div>A:</div>
-				<div>
-				{answerList.map((answer) => (
-					<Answer answer = {answer} key = {answer.answer_id}/>
-				))}
+
+				<div className='question-half'>
+					<div> <b>{'Q: ' + props.question.question_body}</b> </div>
+						<div className='question-buttons'>
+							<Helpful question={props.question} />
+							<Button onClick={()=> {toggleShow(dispatch, localState)}}>Add Answer</Button>
+							<AnswerForm show={localState}
+							question={props.question}
+							question_id={props.question.question_id}
+							product={props.product}/>
+						</div>
 				</div>
-				{count < answers.length &&
-				<span className = "more-answers" onClick = {()=> setCount(answers.length)}>See More Answers</span>}
+
+				<div className='answer-half'>
+				  <div>A:</div>
+				    <div>
+						{answerList.map((answer) => (
+							<Answer answer={answer} key={answer.answer_id}/>
+						))}
+						</div>
+						{(count < answers.length) &&
+						<span className="more-answers" onClick={()=> setCount(answers.length)}>See More Answers</span>}
+						{(count > 2 && count === answers.length) &&
+						<span className="collapse-answers" onClick={() => setCount(2)}>Collapse answers</span>}
+				</div>
 			</div>
 			)
 		} else {
@@ -52,4 +65,4 @@ var QuestionsEntry = (props) => {
 		}
 }
 
-	export default QuestionsEntry
+export default QuestionsEntry
