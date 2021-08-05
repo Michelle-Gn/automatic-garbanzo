@@ -9,13 +9,15 @@ const SearchBar = (props) => {
         <div className="col-md-50">
         <div className="search-bar">
             <input
-              onChange = {(e) => {
+              onChange={
+                (e) => {
                 props.setSearch(e.target.value)
-              }}
+                }
+              }
               className="form-control"
               type="text"
-              placeholder= "HAVE A QUESTION? SEARCH FOR ANSWERS..."
-              value = {props.search}/>
+              placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+              value={props.search}/>
             <button className="btn hidden-sm-down">
               <span className="glyphicon glyphicon-search"></span>
             </button>

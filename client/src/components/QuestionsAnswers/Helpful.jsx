@@ -7,9 +7,9 @@ var Helpful = (props) => {
 
   return (
     <div>
-      <span className = "helpful">Helpful?</span>
-      <span className = "helpfulness-stats"
-      onClick = {(e) => {
+      <span className="helpful">Helpful?</span>
+      <span className="helpfulness-stats"
+      onClick={(e) => {
         e.preventDefault()
         updateHelpfulness(props.question.question_id)
         .then(() => {setCount(count + 1)})

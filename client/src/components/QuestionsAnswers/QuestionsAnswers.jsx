@@ -13,10 +13,11 @@ const QuestionsAnswers = (props) => {
 
 	const dispatch = useDispatch();
 
-	useEffect(() => {if (product.id) {
-		console.log('product:', product)
-		getQuestions(dispatch, product.id, 1, 1000)
-	}}, [product]);
+	useEffect(() => {
+		if (product.id) {
+		  getQuestions(dispatch, product.id, 1, 1000)
+	  }
+	}, [product]);
 	const localState = useSelector(((globalState) => globalState.questions));
 	useEffect(() => {toggleShowQuestion(dispatch, true)}, []);
 	const shownState = useSelector(((globalState) => globalState.questionFormStatus));
@@ -33,19 +34,19 @@ const QuestionsAnswers = (props) => {
 
 	if (localState.length !== 0) {
 		return (
-			<div className = 'QA-container'>
+			<div className='QA-container'>
 				<h4> QUESTIONS AND ANSWERS </h4>
-				<SearchBar searchField = {search} setSearch = {setSearch}/>
+				<SearchBar searchField={search} setSearch={setSearch}/>
 				<div>
-				<Questions qaList = {qaList} product = {product.name}/>
+				<Questions qaList={qaList} product={product.name}/>
 				{(count < localState.length && search.length < 3) &&
-				<button className = "more-questions" onClick = {() => setCount(count + 2)}>
+				<button className="more-questions" onClick={() => setCount(count + 2)}>
 					MORE ANSWERED QUESTIONS
 				</button>}
-				<Button className = "add-question" onClick = {()=> {toggleShowQuestion(dispatch, shownState)}}>
+				<Button className="add-question" onClick={()=> {toggleShowQuestion(dispatch, shownState)}}>
 					ADD A QUESTION +
 				</Button>
-				<QuestionForm productName = {product.name} product = {product.id} show = {shownState}/>
+				<QuestionForm productName={product.name} product={product.id} show={shownState}/>
 				</div>
 			</div>
 		)
