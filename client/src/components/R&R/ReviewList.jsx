@@ -46,7 +46,7 @@ const ReviewList = (props) => {
       {Object.values(reviews).slice(0, reviewCount).map((review, i) => (
         <Review key={i} reviewData={review} />
       ))}
-      <button onClick={handleClick}>ADD MORE REVIEWS</button>
+      <button onClick={handleClick}>MORE REVIEWS&#160;&#160;&#160;&#160;&#160;</button>
       <ReviewForm />
     </div>
   )

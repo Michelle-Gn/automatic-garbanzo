@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa'
 
-const SubmitStarRating = () => {
+const SubmitStarRating = (props) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
@@ -11,13 +11,16 @@ const SubmitStarRating = () => {
         const ratingValue = i + 1;
 
         return (
-          <label>
+          <label key={i}>
             <input
               hidden
               type='radio'
               name='star-rating'
               value={ratingValue}
-              onClick={() => setRating(ratingValue)}
+              onClick={() => {
+                setRating(ratingValue);
+                props.setField('rating', Number(ratingValue))
+              }}
             />
             <FaStar
               className='star'
