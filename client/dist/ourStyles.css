@@ -348,3 +348,8 @@ html {
   grid-row: 6 / 6;
   grid-column: 1 / 4;
 }
+
+#list-reviews-scroll {
+  height: 700px;
+  overflow-y: scroll;
+}

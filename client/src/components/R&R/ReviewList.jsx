@@ -12,13 +12,14 @@ const ReviewList = (props) => {
   const product = useSelector(state => state.getNewProductReducer.selectedProduct)
   const totalRatings = useSelector(state => state.totalRatings) || 5
 
-  const [sortBy, setSortBy] = useState('relevant');
-  const [reviewCount, setReviewCount] = useState(2);
+  const [sortBy, setSortBy] = useState('relevant')
+  const [reviewCount, setReviewCount] = useState(2)
+  const [buttonText, setButtonText] = useState('MORE REVIEWS')
 
   const getReviewData = (id, sortBy, count, dispatch) => {
     return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-lax/reviews/?product_id=${id}&count=${count}&sort=${sortBy}`, { headers: {'Authorization': config} })
       .then(result => dispatch(result.data))
-      .catch(err => console.log('getReviewData failed: ', err))
+      .catch(err => console.log('getReviewData failed: ', err));
   }
 
   useEffect(() => {
@@ -28,6 +29,16 @@ const ReviewList = (props) => {
       })
     }
   }, [product, sortBy, totalRatings])
+
+  useEffect(() => {
+    if (reviews.length <= 2) {
+      setButtonText('');
+    } else if (reviewCount === reviews.length) {
+      setButtonText('COLLAPSE REVIEWS');
+    } else {
+      setButtonText('MORE REVIEWS');
+    }
+  }, [reviewCount])
 
   const handleClick = () => {
     if (reviewCount === reviews.length) {
@@ -47,10 +58,14 @@ const ReviewList = (props) => {
           <option key='newest' value='newest'>newest</option>
         </select>
       </div>
-      {Object.values(reviews).slice(0, reviewCount).map((review, i) => (
-        <Review key={i} reviewData={review} />
-      ))}
-      <button className='review-list-buttons' onClick={handleClick}>MORE REVIEWS</button>
+      <div id='list-reviews-scroll'>
+        {
+          Object.values(reviews).slice(0, reviewCount).map((review, i) => (
+            <Review key={i} reviewData={review} />
+          ))
+        }
+      </div>
+      <button className='review-list-buttons' onClick={handleClick}>{buttonText}</button>
       <br/>
       <ReviewForm />
     </div>
