@@ -46,7 +46,7 @@ var QuestionsEntry = (props) => {
 				<div className='question-half'>
 					<div className='divInline'> <b>{'Q: ' + props.question.question_body}</b> </div>
 							<Helpful question={props.question} />
-							<button className='divFloat' onClick={()=> {
+							<button className='divFloat addanswer-button' onClick={()=> {
 								toggleShow(dispatch, localState)
 								setQuestion(dispatch, props.question.question_body)}}>Add Answer</button>
 							<AnswerForm show={localState}

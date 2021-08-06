@@ -7,7 +7,7 @@ var Helpful = (props) => {
 
   return (
     <div className='divInline divFloat' >
-      <div className="helpful divInline answer-button">Helpful?</div>
+      <div className="helpful divInline helpful-button">Helpful?</div>
       <div className="helpfulness-stats divInline answer-button"
       onClick={(e) => {
         e.preventDefault()

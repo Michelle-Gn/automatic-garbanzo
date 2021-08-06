@@ -7,14 +7,12 @@ var AnswerHelpful = (props) => {
 
   return (
     <div className="divInline">
-      <div className="divInline question-button">Helpful?</div>
-      <div className="divInline question-button"
-      onClick={(e) => {
+      <div className="divInline question-button" onClick={(e) => {
         e.preventDefault()
         updateAnswerHelpfulness(props.answer.answer_id)
         .then(() => {setCount(count + 1)})
         .catch((error) => {console.log(error)})
-      }}>Yes ({count})</div>
+      }}>Helpful? Yes ({count})</div>
     </div>
   )
 }

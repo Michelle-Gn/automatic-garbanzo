@@ -212,6 +212,12 @@ html {
   font-size: small;
 }
 
+.helpful-button {
+  margin: 2px;
+  padding: 5px;
+  font-size: small;
+}
+
 .answer-info {
   font-size: small;
   margin-right: 3px;
@@ -221,7 +227,25 @@ html {
   margin-top: 15px;
 }
 
+.more-questions, .add-question, .addanswer-button {
+    background-color: white;
+    color: black;
+    border: 3px solid gray;
+    border-radius: 12px
+}
+
+.more-questions:hover {background-color: #e7e7e7;
+}
+.add-question:hover {background-color: #e7e7e7;
+}
+.addanswer-button:hover {background-color: #e7e7e7;
+}
+
 .add-answer {
   font-size: small;
   font-weight: bold;
+}
+
+.more-answers, .collapse-answers {
+  color: white
 }

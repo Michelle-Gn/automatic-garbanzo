@@ -35,7 +35,7 @@ const QuestionsAnswers = (props) => {
 	if (localState.length !== 0) {
 		return (
 			<div className='QA-container'>
-				<h4> QUESTIONS AND ANSWERS </h4>
+				<h5> QUESTIONS AND ANSWERS </h5>
 				<SearchBar searchField={search} setSearch={setSearch}/>
 				<div>
 				<Questions qaList={qaList} product={product.name}/>
