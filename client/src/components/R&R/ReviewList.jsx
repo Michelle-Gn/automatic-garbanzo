@@ -30,13 +30,17 @@ const ReviewList = (props) => {
   }, [product, sortBy, totalRatings])
 
   const handleClick = () => {
-    setReviewCount(reviewCount + 2)
+    if (reviewCount === reviews.length) {
+      setReviewCount(2)
+    } else {
+      setReviewCount(reviewCount + 2);
+    }
   }
 
   return (
     <div id='review-list'>
       <div id='review-dropdown'>
-        <h6>{totalRatings.length} reviews, sorted by</h6>
+        <h6 id='dropdown-text'>{reviews.length} reviews, sorted by&#160;</h6>
         <select onChange={(e) => setSortBy(e.target.value)}>
           <option key='relevant' value='relevant'>relevance</option>
           <option key='helpful' value='helpful'>helpful</option>
@@ -46,7 +50,8 @@ const ReviewList = (props) => {
       {Object.values(reviews).slice(0, reviewCount).map((review, i) => (
         <Review key={i} reviewData={review} />
       ))}
-      <button onClick={handleClick}>MORE REVIEWS&#160;&#160;&#160;&#160;&#160;</button>
+      <button className='review-list-buttons' onClick={handleClick}>MORE REVIEWS</button>
+      <br/>
       <ReviewForm />
     </div>
   )

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const CharacteristicBar = ({characteristic, charRating}) => {
-  const outerBar = {height: 20, width: '20%', backgroundColor: 'white'};
-  const innerBar = {height: '100%', width: `${charRating * 13}%`, display: 'inline-block'};
+  const outerBar = {height: 2, width: '100%', backgroundColor: 'gray'};
+  const innerBar = {height: '10%', width: `${(charRating / 5 ) * 100}%`, display: 'inline-block'};
 
   let highKey, midKey, lowKey;
 
@@ -35,18 +35,16 @@ const CharacteristicBar = ({characteristic, charRating}) => {
 
   return (
     <div id='characteristic-bar' key={characteristic}>
-      <p>{characteristic}</p>
+      <strong>{characteristic}</strong>
+      <div className='char-meanings'>
+        <p className='char-meaning' id='low-char'>{lowKey}</p>
+        <p className='char-meaning' id='mid-char'>{midKey}</p>
+        <p className='char-meaning' id='high-char'>{highKey}</p>
+      </div>
       <div id='outer-bar-char' style={outerBar}>
         <div style={innerBar}></div>
-        <span id='triangle-pointer'>&#9660;</span>
+        <span id='triangle-pointer'>&#9650;</span>
       </div>
-      <p id='low-char' className='meaning'>
-        {lowKey}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {midKey}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {highKey}
-      </p>
-      {/* <p id='mid-char' className='meaning'>{midKey}</p>
-      <p id='high-char' className='meaning'>{highKey}</p> */}
     </div>
   )
 };

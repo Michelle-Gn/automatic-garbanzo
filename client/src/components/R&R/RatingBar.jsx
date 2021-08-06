@@ -3,8 +3,8 @@ import React from 'react';
 const RatingBar = ({starNum, starRating, totalRatings}) => {
   const percentage = (starRating / totalRatings) * 100;
 
-  const outerBar = {height: 15, width: '15%', backgroundColor: 'grey'};
-  const innerBar = {height: 15, width: `${percentage}%`, backgroundColor: 'green'};
+  const outerBar = {height: 20, width: '100%', backgroundColor: 'lightgrey'};
+  const innerBar = {height: 20, width: `${percentage}%`, backgroundColor: 'lightseagreen'};
 
   return (
     <div id='bar'>
