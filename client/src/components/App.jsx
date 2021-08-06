@@ -22,8 +22,8 @@ var App = () => {
     <Provider store={store} >
       <div id="AppContainer" className="container-fluid">
         <ProductOverview />
-        <RatingsReviews />
         <QuestionsAnswers/>
+        <RatingsReviews />
       </div>
     </Provider>
   )

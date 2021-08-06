@@ -20,8 +20,8 @@ const RatingsBreakdown = (props) => {
     <div id='breakdown'>
       {/* AVERAGE RATING (NUMERIC AND STARS) */}
       <span id='starAverage'>
-        {Number(starAverage).toFixed(1)}
-        <StarRating starCount={starAverage} />
+        <p id='numeric-avg'>{Number(starAverage).toFixed(1)}</p>
+        <div id='breakdown-stars'><StarRating starCount={starAverage} /></div>
       </span>
 
       {/* BAR GRAPHS OF RATINGS */}
