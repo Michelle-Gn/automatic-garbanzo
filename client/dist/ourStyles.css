@@ -164,8 +164,9 @@ html {
 /* Questions Answers CSS */
 
 .questions {
-  max-height: 300px;
-  overflow-y: auto
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 30px;
 }
 
 .QA-container {
@@ -191,5 +192,36 @@ html {
 }
 
 .answer-half {
-  margin: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.divInline {
+  display: inline;
+  width: 200px;
+}
+
+.divFloat {
+  float: right;
+}
+
+.answer-button, .question-button {
+  margin: 2px;
+  border-left: 1px solid black;
+  padding: 5px;
+  font-size: small;
+}
+
+.answer-info {
+  font-size: small;
+  margin-right: 3px;
+}
+
+.more-answers {
+  margin-top: 15px;
+}
+
+.add-answer {
+  font-size: small;
+  font-weight: bold;
 }

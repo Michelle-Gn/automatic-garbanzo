@@ -7,6 +7,7 @@ import getQuestionsReducer from './Q&A/questionsReducer'
 import getAnswersReducer from './Q&A/answersReducer'
 import modalReducer from './Q&A/modalReducer'
 import questionModalReducer from './Q&A/questionModalReducer.js'
+import getQuestionIdReducer from './Q&A/questionIdReducer.js'
 import ratingsReducers from './R&R/ratingsReducers.js';
 import reviewListReducers from './R&R/reviewListReducers.js';
 
@@ -27,5 +28,6 @@ export default combineReducers({
   questions: getQuestionsReducer,
   answers: getAnswersReducer,
   answerFormStatus: modalReducer,
-  questionFormStatus: questionModalReducer
+  questionFormStatus: questionModalReducer,
+  getQuestions: getQuestionIdReducer
 })

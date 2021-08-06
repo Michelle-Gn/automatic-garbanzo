@@ -11,6 +11,9 @@ const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [answer, setAnswer] = useState('');
 
+const [question, setQuestion] = useState(props.questionbody);
+console.log('question', question);
+
   return (
     <div>
       <Modal show={props.show}>
@@ -18,7 +21,7 @@ const [answer, setAnswer] = useState('');
           <Modal.Title>
             <h2>Submit your Answer</h2>
             <h6>{props.product}</h6>
-            <h6>{props.question.question_body}</h6>
+            <h6>{question}</h6>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

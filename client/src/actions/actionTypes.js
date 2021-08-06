@@ -16,4 +16,5 @@ export const GET_QUESTIONS = 'GET_QUESTIONS';
 export const GET_ANSWERS = 'GET_ANSWERS';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const TOGGLE_QUESTIONS = 'TOGGLE_QUESTIONS';
+export const SET_QUESTION_ID = 'SET_QUESTION_ID';
 

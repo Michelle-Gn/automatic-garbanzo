@@ -43,9 +43,9 @@ const QuestionsAnswers = (props) => {
 				<button className="more-questions" onClick={() => setCount(count + 2)}>
 					MORE ANSWERED QUESTIONS
 				</button>}
-				<Button className="add-question" onClick={()=> {toggleShowQuestion(dispatch, shownState)}}>
+				<button className="add-question" onClick={()=> {toggleShowQuestion(dispatch, shownState)}}>
 					ADD A QUESTION +
-				</Button>
+				</button>
 				<QuestionForm productName={product.name} product={product.id} show={shownState}/>
 				</div>
 			</div>
