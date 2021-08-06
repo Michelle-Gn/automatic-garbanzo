@@ -10,15 +10,15 @@ const Review = (props) => {
 
   return (
     <div id='review'>
-      <StarRating id='stars' starCount={reviewData.rating} />
+      <StarRating id='stars-review' starCount={reviewData.rating} />
       <span id='user-date'>
         <p id='username-date' key='username-date'>{reviewData['reviewer_name']}, {formattedDate}</p>
       </span>
-      <h3>{reviewData.summary}</h3>
-      <p>{reviewData.body}</p>
+      <h3 id='review-summ'>{reviewData.summary}</h3>
+      <p id='review-body'>{reviewData.body}</p>
       {
         !reviewData.recommend ? null :
-        <p><span className='checkmark'>&#10003;</span> I recommend this product</p>
+        <p id='rec-review'><span className='checkmark'>&#10003;</span> I recommend this product</p>
       }
       {
         !reviewData.response ? null :
