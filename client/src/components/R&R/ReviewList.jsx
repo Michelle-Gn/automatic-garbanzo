@@ -42,10 +42,14 @@ const ReviewList = (props) => {
 
   const handleClick = () => {
     if (reviewCount === reviews.length) {
-      setReviewCount(2)
+      setReviewCount(2);
     } else {
       setReviewCount(reviewCount + 2);
     }
+  }
+
+  const handleAllClick =() => {
+    setReviewCount(reviews.length);
   }
 
   return (
@@ -66,6 +70,8 @@ const ReviewList = (props) => {
         }
       </div>
       <button className='review-list-buttons' onClick={handleClick}>{buttonText}</button>
+      <br/>
+      <button onClick={handleAllClick}>SHOW ALL REVIEWS</button>
       <br/>
       <ReviewForm />
     </div>
