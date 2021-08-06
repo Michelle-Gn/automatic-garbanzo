@@ -29,5 +29,5 @@ export default combineReducers({
   answers: getAnswersReducer,
   answerFormStatus: modalReducer,
   questionFormStatus: questionModalReducer,
-  getQuestions: getQuestionIdReducer
+  questionId: getQuestionIdReducer
 })
