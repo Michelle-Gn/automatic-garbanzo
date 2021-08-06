@@ -6,15 +6,13 @@ var AnswerHelpful = (props) => {
   const [count, setCount] = useState(props.answer.helpfulness);
 
   return (
-    <div>
-      <span className="answerHelpful">Helpful?</span>
-      <span className="answerHelpful-stats"
-      onClick={(e) => {
+    <div className="divInline">
+      <div className="divInline question-button" onClick={(e) => {
         e.preventDefault()
         updateAnswerHelpfulness(props.answer.answer_id)
         .then(() => {setCount(count + 1)})
         .catch((error) => {console.log(error)})
-      }}>Yes ({count}) </span>
+      }}>Helpful? Yes ({count})</div>
     </div>
   )
 }

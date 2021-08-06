@@ -18,7 +18,7 @@ const [answer, setAnswer] = useState('');
           <Modal.Title>
             <h2>Submit your Answer</h2>
             <h6>{props.product}</h6>
-            <h6>{props.question.question_body}</h6>
+            <h6>{props.questionbody}</h6>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

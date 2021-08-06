@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import getAnswers from '../../actions/Q&A/getAnswers.js';
 import toggleShow from '../../actions/Q&A/toggleShow.js';
+import setQuestion from '../../actions/Q&A/setQuestion.js';
 
 import Answer from './Answer.jsx';
 import Helpful from './Helpful.jsx';
@@ -17,7 +18,12 @@ var QuestionsEntry = (props) => {
 		  })
 			.catch((error) => {console.log(error)})}, []);
 
-		// slice answer list to get only 2 answers
+
+		// const [question, setQuestion] = useState(props.question.question_body);
+		// console.log('question', question);
+
+
+			// slice answer list to get only 2 answers
 		const [count, setCount] = useState(2);
 		let sortedAnswerList = answers.sort((a, b) => b.helpfulness - a.helpfulness);
 	  let answerList = sortedAnswerList.slice(0, count);
@@ -30,31 +36,33 @@ var QuestionsEntry = (props) => {
 
 		const localState = useSelector(((globalState) => globalState.answerFormStatus));
 
+    // get question id
+		const localQuestionId = useSelector(((globalState) => globalState.questionId));
+
 		if (answerList.length !== 0) {
 			return (
 			<div>
 
 				<div className='question-half'>
-					<div> <b>{'Q: ' + props.question.question_body}</b> </div>
-						<div className='question-buttons'>
+					<div className='divInline'> <b>{'Q: ' + props.question.question_body}</b> </div>
 							<Helpful question={props.question} />
-							<Button onClick={()=> {toggleShow(dispatch, localState)}}>Add Answer</Button>
+							<button className='divFloat addanswer-button' onClick={()=> {
+								toggleShow(dispatch, localState)
+								setQuestion(dispatch, props.question.question_body)}}>Add Answer</button>
 							<AnswerForm show={localState}
 							question={props.question}
+							questionbody={localQuestionId}
 							question_id={props.question.question_id}
 							product={props.product}/>
-						</div>
 				</div>
 
 				<div className='answer-half'>
-				  <div>A:</div>
-				    <div>
+				  <div className='divInline'>A:</div>
 						{answerList.map((answer) => (
 							<Answer answer={answer} key={answer.answer_id}/>
 						))}
-						</div>
 						{(count < answers.length) &&
-						<span className="more-answers" onClick={()=> setCount(answers.length)}>See More Answers</span>}
+						<div className="more-answers" onClick={()=> setCount(answers.length)}>See More Answers</div>}
 						{(count > 2 && count === answers.length) &&
 						<span className="collapse-answers" onClick={() => setCount(2)}>Collapse answers</span>}
 				</div>

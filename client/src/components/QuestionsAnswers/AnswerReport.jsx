@@ -4,12 +4,12 @@ import reportAnswer from '../../actions/Q&A/reportAnswer.js';
 var AnswerReport = (props) => {
 
   return (
-    <div>
-      <span className = "report" onClick = {(e) => {
+    <div className='divInline'>
+      <div className='divInline answer-button' onClick={(e) => {
         e.preventDefault()
         reportAnswer(props.answer_id)
         .then(() => {console.log('answer reported')})
-      }}><b>Report</b></span>
+      }}><b>Report</b></div>
     </div>
   )
 }

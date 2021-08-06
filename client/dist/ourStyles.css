@@ -166,8 +166,9 @@ html {
 /* Questions Answers CSS */
 
 .questions {
-  max-height: 300px;
-  overflow-y: auto
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 30px;
 }
 
 .QA-container {
@@ -193,6 +194,62 @@ html {
 }
 
 .answer-half {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.divInline {
+  display: inline;
+  width: 200px;
+}
+
+.divFloat {
+  float: right;
+}
+
+.answer-button, .question-button {
+  margin: 2px;
+  border-left: 1px solid black;
+  padding: 5px;
+  font-size: small;
+}
+
+.helpful-button {
+  margin: 2px;
+  padding: 5px;
+  font-size: small;
+}
+
+.answer-info {
+  font-size: small;
+  margin-right: 3px;
+}
+
+.more-answers {
+  margin-top: 15px;
+}
+
+.more-questions, .add-question, .addanswer-button {
+    background-color: white;
+    color: black;
+    border: 3px solid gray;
+    border-radius: 12px
+}
+
+.more-questions:hover {background-color: #e7e7e7;
+}
+.add-question:hover {background-color: #e7e7e7;
+}
+.addanswer-button:hover {background-color: #e7e7e7;
+}
+
+.add-answer {
+  font-size: small;
+  font-weight: bold;
+}
+
+.more-answers, .collapse-answers {
+  color: white
   margin: 20px;
 }
 
