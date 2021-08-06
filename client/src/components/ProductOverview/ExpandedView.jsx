@@ -20,6 +20,7 @@ var ExpandedView = ({photos, setView}) => {
             width: '90em',}}
             onClick={() => {setView('default')}} >
           <InnerImageZoom
+            style={{height: '20vh'}}
             src={photo.url}
             zoomSrc={photo.url}
             zoomType="hover"

@@ -70,7 +70,7 @@ html {
 
 .iiz__zoom-img {
   width: auto !important;
-  max-width: none !important;
+  max-width: auto !important;
   position: absolute;
   visibility: hidden;
   opacity: 0;
